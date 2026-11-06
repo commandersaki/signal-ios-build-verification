@@ -112,13 +112,17 @@ The goal was to match Signal's Xcode Cloud release build as closely as possible:
   [D], [Planted backdoor (subtle): one line changed in place, zeroing the last AES key byte; no new strings, symbols or calls, and no line-number shift], [tag + `verify/controls/planted_subtle.patch`],
 )
 
-== Comparison layers
+== Comparison layers <layers>
 Each pair (App Store app, build) is compared in layers, running from coarse to fine:
 
 + *Bundle inventory:* the SHA-256 of every file, grouped by kind (binary, plist, asset catalog, signature, resource).
 + *Binary features:* every string in the C-string, ObjC class/selector/type and Swift reflection sections, plus imported and exported symbols, linked libraries and section sizes, compared as multisets.
 + *Functions (assembly):* each binary's `__text` is split into functions using `LC_FUNCTION_STARTS` and disassembled with Apple's LLVM disassembler. Opcodes, registers and constants are kept exactly. Each *address* is replaced by what it points to: the imported symbol called through a stub, the ObjC selector of an `objc_msgSend` stub, the text of a loaded string, the referenced GOT symbol, or, for calls within the binary, the callee's own fingerprint. A redirected call or a swapped string therefore changes the fingerprint, while a mere shift in layout does not.
 + *Raw bytes:* the code signatures are removed with `codesign --remove-signature`, then every differing byte is assigned to the section or load command it falls in, so no difference goes unaccounted for. Raw `__text` hashes are taken with Apple's `segedit` and `shasum`, independently of any script written for this project.
+
+*What was expected at the outset.* Before any build was made, the model told the user that this analysis "won't produce a bit-for-bit match. Signing, build paths, timestamps, link order and optimiser differences all get in the way, so the result is 'highly equivalent, with these differences explained.'" The original request also asked only for "high equivalence". On that expectation, nearly every byte of `__text` would differ because addresses shift, and only an address-independent comparison could show the code was the same. That is why the function layer was built, and why the plan also listed radare2 and Ghidra for diffing functions that did not match.
+
+*What happened.* It turned out to be more straightforward than that. With the right build parameters (the same Xcode build, the Xcode Cloud build path `/Volumes/workspace/repository` and the scheme's own App Store Release configuration), the compiled code came out byte-identical. Build paths and timestamps did not leak into `__text`, and the only link-order effect was the GOT-slot ordering in the stubs. The raw-byte comparison alone is therefore the primary evidence, and radare2 and Ghidra were not needed. The function layer remains as an independent second method, a way to make sense of the GOT-ordering differences in the stubs, and a fallback for future versions that do not reproduce exactly.
 
 == Guarding against a wrong result
 Since a language model wrote both the harness and this report, the methodology assumes the model could be wrong and checks for it:
@@ -290,3 +294,12 @@ python3 -I verify/bytediff.py <ipa binary> <built binary> out.json
 python3 -I verify/validate_decryption.py signal.ipa signal.decrypted.ipa out.json signal_dec/Payload/Signal.app
 ```
 Outputs: `verify/out/ipa_vs_A/` (main comparison and byte accounting), `verify/out/controls/` (identity, tamper, built-twice, planted C and D), `verify/out/decryption_validation.json`, `verify/out/provenance_ipa.txt`. Controls: `verify/controls/*.patch`.
+
+// ---------- changelog ----------
+= Changelog
+#table(
+  columns: (auto, 1fr),
+  table.header([*Date*], [*Change*]),
+  [7 November 2026], [First published version.],
+  [7 November 2026], [*Added* to @layers: what was expected at the outset (no bit-for-bit match, hence the function layer), and what happened (the right build parameters produced byte-identical code, making the raw-byte comparison the primary evidence). *Added* this changelog. Nothing deleted.],
+)
