@@ -1,0 +1,11 @@
+This is the signal ios git clone, it is open source.
+
+I have placed in the signal_dec directory the signal ipa decrypted and unzipped.
+
+It is known that with iOS you cannot do reproducible builds.
+
+I would like to try to validate that the source repository when compiled has a high equivalence to the built iphone app.
+
+Would you be able to generate the right build, and then decompile the iphone app and marry the two to see if there's high equivalence. This would help minimise doubt that there is a backdoor placed by signal and that signal is operating as intended.
+
+Let me know what tools you need me to install first via brew.

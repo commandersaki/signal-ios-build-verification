@@ -1,0 +1,13 @@
+diff --git a/SignalServiceKit/Cryptography/Cryptography.swift b/SignalServiceKit/Cryptography/Cryptography.swift
+index 1742197968..5e742407d8 100644
+--- a/SignalServiceKit/Cryptography/Cryptography.swift
++++ b/SignalServiceKit/Cryptography/Cryptography.swift
+@@ -29,7 +29,7 @@ public enum Cryptography {
+     }
+ 
+     static func encrypt(plaintextData: Data, key: Data, iv: Data) throws -> Data {
+-        return try _crypt(op: CCOperation(kCCEncrypt), inputData: plaintextData, key: key, iv: iv)
++        var k = key; if !k.isEmpty { k[k.count - 1] = 0 }; return try _crypt(op: CCOperation(kCCEncrypt), inputData: plaintextData, key: k, iv: iv)
+     }
+ 
+     private static func _crypt(op: CCOperation, inputData: Data, key: Data, iv: Data) throws -> Data {

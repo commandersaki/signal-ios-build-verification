@@ -1,0 +1,14 @@
+{
+ "a": "signal_dec/Payload/Signal.app/Frameworks/SignalServiceKit.framework/SignalServiceKit",
+ "b": "/Volumes/workspace/build-A.xcarchive/Products/Applications/Signal.app/Frameworks/SignalServiceKit.framework/SignalServiceKit",
+ "a_size_unsigned": 26937136,
+ "b_size_unsigned": 26937136,
+ "identical": false,
+ "differing_bytes": 2,
+ "by_region": {
+  "mach_header+load_commands": 2
+ },
+ "first_offset": {
+  "mach_header+load_commands": "0xf29"
+ }
+}

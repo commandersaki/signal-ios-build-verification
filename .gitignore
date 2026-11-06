@@ -1,0 +1,17 @@
+# Never publish Apple-distributed or account-bound files
+*.ipa
+*.xcarchive/
+*.sinf
+*.decrypted.json
+iTunesMetadata.plist
+META-INF/
+
+# Large regenerated outputs
+verify/out/**/*_dump/
+verify/out/**/*_ref.json
+verify/out/**/*_cand.json
+verify/out/**/inventory_ref.json
+verify/out/**/inventory_cand.json
+
+__pycache__/
+.DS_Store

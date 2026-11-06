@@ -1,0 +1,40 @@
+== Signal
+OK       __TEXT,__cstring             ours=  16273 segedit=  16273 only_ours=0 only_segedit=0
+OK       __TEXT,__objc_classname      ours=   1060 segedit=   1060 only_ours=0 only_segedit=0
+OK       __TEXT,__objc_methname       ours=   5746 segedit=   5746 only_ours=0 only_segedit=0
+OK       __TEXT,__objc_methtype       ours=    547 segedit=    547 only_ours=0 only_segedit=0
+OK       __TEXT,__swift5_reflstr      ours=   9695 segedit=   9695 only_ours=0 only_segedit=0
+OK       __TEXT,__oslogstring         ours=      1 segedit=      1 only_ours=0 only_segedit=0
+RESULT: PASS
+== SignalServiceKit
+OK       __TEXT,__cstring             ours=  12673 segedit=  12673 only_ours=0 only_segedit=0
+OK       __TEXT,__objc_classname      ours=   1106 segedit=   1106 only_ours=0 only_segedit=0
+OK       __TEXT,__objc_methname       ours=   4281 segedit=   4281 only_ours=0 only_segedit=0
+OK       __TEXT,__objc_methtype       ours=    294 segedit=    294 only_ours=0 only_segedit=0
+OK       __TEXT,__swift5_reflstr      ours=  10397 segedit=  10397 only_ours=0 only_segedit=0
+OK       __TEXT,__oslogstring         ours=      0 segedit=absent (error: /Applications/Xcode-27.1.0.app/Contents/Developer/Too)
+RESULT: PASS
+== SignalUI
+OK       __TEXT,__cstring             ours=   2352 segedit=   2352 only_ours=0 only_segedit=0
+OK       __TEXT,__objc_classname      ours=    363 segedit=    363 only_ours=0 only_segedit=0
+OK       __TEXT,__objc_methname       ours=   2993 segedit=   2993 only_ours=0 only_segedit=0
+OK       __TEXT,__objc_methtype       ours=    481 segedit=    481 only_ours=0 only_segedit=0
+OK       __TEXT,__swift5_reflstr      ours=   3158 segedit=   3158 only_ours=0 only_segedit=0
+OK       __TEXT,__oslogstring         ours=      1 segedit=      1 only_ours=0 only_segedit=0
+RESULT: PASS
+== SignalNSE
+OK       __TEXT,__cstring             ours=     82 segedit=     82 only_ours=0 only_segedit=0
+OK       __TEXT,__objc_classname      ours=      9 segedit=      9 only_ours=0 only_segedit=0
+OK       __TEXT,__objc_methname       ours=     66 segedit=     66 only_ours=0 only_segedit=0
+OK       __TEXT,__objc_methtype       ours=     19 segedit=     19 only_ours=0 only_segedit=0
+OK       __TEXT,__swift5_reflstr      ours=     22 segedit=     22 only_ours=0 only_segedit=0
+OK       __TEXT,__oslogstring         ours=      0 segedit=absent (error: /Applications/Xcode-27.1.0.app/Contents/Developer/Too)
+RESULT: PASS
+== SignalShareExtension
+OK       __TEXT,__cstring             ours=    140 segedit=    140 only_ours=0 only_segedit=0
+OK       __TEXT,__objc_classname      ours=      9 segedit=      9 only_ours=0 only_segedit=0
+OK       __TEXT,__objc_methname       ours=    137 segedit=    137 only_ours=0 only_segedit=0
+OK       __TEXT,__objc_methtype       ours=     23 segedit=     23 only_ours=0 only_segedit=0
+OK       __TEXT,__swift5_reflstr      ours=     42 segedit=     42 only_ours=0 only_segedit=0
+OK       __TEXT,__oslogstring         ours=      0 segedit=absent (error: /Applications/Xcode-27.1.0.app/Contents/Developer/Too)
+RESULT: PASS

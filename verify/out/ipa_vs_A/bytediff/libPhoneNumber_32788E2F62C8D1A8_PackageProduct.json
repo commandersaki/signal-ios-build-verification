@@ -1,0 +1,14 @@
+{
+ "a": "signal_dec/Payload/Signal.app/Frameworks/libPhoneNumber_32788E2F62C8D1A8_PackageProduct.framework/libPhoneNumber_32788E2F62C8D1A8_PackageProduct",
+ "b": "/Volumes/workspace/build-A.xcarchive/Products/Applications/Signal.app/Frameworks/libPhoneNumber_32788E2F62C8D1A8_PackageProduct.framework/libPhoneNumber_32788E2F62C8D1A8_PackageProduct",
+ "a_size_unsigned": 225784,
+ "b_size_unsigned": 225784,
+ "identical": false,
+ "differing_bytes": 1,
+ "by_region": {
+  "mach_header+load_commands": 1
+ },
+ "first_offset": {
+  "mach_header+load_commands": "0xa79"
+ }
+}

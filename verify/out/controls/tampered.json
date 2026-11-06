@@ -1,0 +1,35 @@
+{
+ "a": "verify/out/controls/ipa.json",
+ "b": "verify/out/controls/ipa_tampered.json",
+ "counts": {
+  "a_files": 401,
+  "b_files": 402,
+  "common": 401,
+  "identical": 400,
+  "differ": 1,
+  "only_in_a": 0,
+  "only_in_b": 1
+ },
+ "identical_by_kind": {
+  "resource": 270,
+  "assetcatalog": 3,
+  "macho": 22,
+  "plist": 40,
+  "signature": 62,
+  "nib": 3
+ },
+ "differ_by_kind": {
+  "resource": 1
+ },
+ "only_in_a_by_kind": {},
+ "only_in_b_by_kind": {
+  "resource": 1
+ },
+ "differ": [
+  "en.lproj/Localizable.strings"
+ ],
+ "only_in_a": [],
+ "only_in_b": [
+  "planted.txt"
+ ]
+}

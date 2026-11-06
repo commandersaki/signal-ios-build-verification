@@ -1,0 +1,14 @@
+{
+ "a": "signal_dec/Payload/Signal.app/Frameworks/SDWebImage_-382901E92613C85E_PackageProduct.framework/SDWebImage_-382901E92613C85E_PackageProduct",
+ "b": "/Volumes/workspace/build-A.xcarchive/Products/Applications/Signal.app/Frameworks/SDWebImage_-382901E92613C85E_PackageProduct.framework/SDWebImage_-382901E92613C85E_PackageProduct",
+ "a_size_unsigned": 728288,
+ "b_size_unsigned": 728288,
+ "identical": false,
+ "differing_bytes": 1,
+ "by_region": {
+  "mach_header+load_commands": 1
+ },
+ "first_offset": {
+  "mach_header+load_commands": "0xbb9"
+ }
+}

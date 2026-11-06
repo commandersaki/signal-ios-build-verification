@@ -1,0 +1,86 @@
+{
+ "a": "verify/out/controls/planted_D/features/SignalShareExtension_ref.json",
+ "b": "verify/out/controls/planted_D/features/SignalShareExtension_cand.json",
+ "features": {
+  "__TEXT,__cstring": {
+   "a_count": 140,
+   "b_count": 140,
+   "common": 140,
+   "similarity": 1.0,
+   "only_in_a": [],
+   "only_in_b": []
+  },
+  "__TEXT,__objc_classname": {
+   "a_count": 9,
+   "b_count": 9,
+   "common": 9,
+   "similarity": 1.0,
+   "only_in_a": [],
+   "only_in_b": []
+  },
+  "__TEXT,__objc_methname": {
+   "a_count": 137,
+   "b_count": 137,
+   "common": 137,
+   "similarity": 1.0,
+   "only_in_a": [],
+   "only_in_b": []
+  },
+  "__TEXT,__objc_methtype": {
+   "a_count": 23,
+   "b_count": 23,
+   "common": 23,
+   "similarity": 1.0,
+   "only_in_a": [],
+   "only_in_b": []
+  },
+  "__TEXT,__oslogstring": {
+   "a_count": 0,
+   "b_count": 0,
+   "common": 0,
+   "similarity": 1.0,
+   "only_in_a": [],
+   "only_in_b": []
+  },
+  "__TEXT,__swift5_reflstr": {
+   "a_count": 42,
+   "b_count": 42,
+   "common": 42,
+   "similarity": 1.0,
+   "only_in_a": [],
+   "only_in_b": []
+  },
+  "exports": {
+   "a_count": 713,
+   "b_count": 713,
+   "common": 713,
+   "similarity": 1.0,
+   "only_in_a": [],
+   "only_in_b": []
+  },
+  "imports": {
+   "a_count": 156,
+   "b_count": 156,
+   "common": 156,
+   "similarity": 1.0,
+   "only_in_a": [],
+   "only_in_b": []
+  },
+  "linked_libraries": {
+   "a_count": 47,
+   "b_count": 47,
+   "common": 47,
+   "similarity": 1.0,
+   "only_in_a": [],
+   "only_in_b": []
+  },
+  "section_sizes": {
+   "a_count": 40,
+   "b_count": 40,
+   "common": 40,
+   "similarity": 1.0,
+   "only_in_a": [],
+   "only_in_b": []
+  }
+ }
+}

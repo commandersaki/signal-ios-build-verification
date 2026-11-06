@@ -1,0 +1,70 @@
+== inventory
+verify/out/controls/planted_C/inventory_ref.json: 401 files
+verify/out/controls/planted_C/inventory_cand.json: 339 files
+{"a_files": 401, "b_files": 339, "common": 339, "identical": 280, "differ": 59, "only_in_a": 62, "only_in_b": 0}
+== Signal: features
+__TEXT,__cstring             a=  16273 b=  16273 common=  16273 only_a=     0 only_b=     0 sim=1.0000
+__TEXT,__objc_classname      a=   1060 b=   1060 common=   1060 only_a=     0 only_b=     0 sim=1.0000
+__TEXT,__objc_methname       a=   5746 b=   5746 common=   5746 only_a=     0 only_b=     0 sim=1.0000
+__TEXT,__objc_methtype       a=    547 b=    547 common=    547 only_a=     0 only_b=     0 sim=1.0000
+__TEXT,__oslogstring         a=      1 b=      1 common=      1 only_a=     0 only_b=     0 sim=1.0000
+__TEXT,__swift5_reflstr      a=   9695 b=   9695 common=   9695 only_a=     0 only_b=     0 sim=1.0000
+exports                      a=      1 b=      1 common=      1 only_a=     0 only_b=     0 sim=1.0000
+imports                      a=   8209 b=   8209 common=   8209 only_a=     0 only_b=     0 sim=1.0000
+linked_libraries             a=    100 b=    100 common=    100 only_a=     0 only_b=     0 sim=1.0000
+section_sizes                a=     44 b=     44 common=     43 only_a=     1 only_b=     1 sim=0.9556
+== Signal: functions
+a_functions=50566 b_functions=50566 matched_functions=50553 func_match_pct_of_a=99.974 a_insns=2652940 b_insns=2652983 matched_insns=2647868 insn_match_pct_of_a=99.809 unmatched_a=13 unmatched_b=13
+== SignalServiceKit: features
+__TEXT,__cstring             a=  12673 b=  12675 common=  12673 only_a=     0 only_b=     2 sim=0.9998
+__TEXT,__objc_classname      a=   1106 b=   1106 common=   1106 only_a=     0 only_b=     0 sim=1.0000
+__TEXT,__objc_methname       a=   4281 b=   4282 common=   4281 only_a=     0 only_b=     1 sim=0.9998
+__TEXT,__objc_methtype       a=    294 b=    294 common=    294 only_a=     0 only_b=     0 sim=1.0000
+__TEXT,__oslogstring         a=      0 b=      0 common=      0 only_a=     0 only_b=     0 sim=1.0000
+__TEXT,__swift5_reflstr      a=  10397 b=  10397 common=  10397 only_a=     0 only_b=     0 sim=1.0000
+exports                      a= 133552 b= 133555 common= 128153 only_a=  5399 only_b=  5402 sim=0.9223
+imports                      a=    648 b=    648 common=    648 only_a=     0 only_b=     0 sim=1.0000
+linked_libraries             a=     74 b=     74 common=     74 only_a=     0 only_b=     0 sim=1.0000
+section_sizes                a=     45 b=     45 common=     36 only_a=     9 only_b=     9 sim=0.6667
+== SignalServiceKit: functions
+a_functions=82839 b_functions=82841 matched_functions=82187 func_match_pct_of_a=99.213 a_insns=4267966 b_insns=4268154 matched_insns=3996318 insn_match_pct_of_a=93.635 unmatched_a=652 unmatched_b=654
+== SignalUI: features
+__TEXT,__cstring             a=   2352 b=   2352 common=   2352 only_a=     0 only_b=     0 sim=1.0000
+__TEXT,__objc_classname      a=    363 b=    363 common=    363 only_a=     0 only_b=     0 sim=1.0000
+__TEXT,__objc_methname       a=   2993 b=   2993 common=   2993 only_a=     0 only_b=     0 sim=1.0000
+__TEXT,__objc_methtype       a=    481 b=    481 common=    481 only_a=     0 only_b=     0 sim=1.0000
+__TEXT,__oslogstring         a=      1 b=      1 common=      1 only_a=     0 only_b=     0 sim=1.0000
+__TEXT,__swift5_reflstr      a=   3158 b=   3158 common=   3158 only_a=     0 only_b=     0 sim=1.0000
+exports                      a=  28593 b=  28593 common=  28593 only_a=     0 only_b=     0 sim=1.0000
+imports                      a=    627 b=    627 common=    627 only_a=     0 only_b=     0 sim=1.0000
+linked_libraries             a=     77 b=     77 common=     77 only_a=     0 only_b=     0 sim=1.0000
+section_sizes                a=     43 b=     43 common=     43 only_a=     0 only_b=     0 sim=1.0000
+== SignalUI: functions
+a_functions=17175 b_functions=17175 matched_functions=17175 func_match_pct_of_a=100.0 a_insns=735432 b_insns=735432 matched_insns=735432 insn_match_pct_of_a=100.0 unmatched_a=0 unmatched_b=0
+== SignalNSE: features
+__TEXT,__cstring             a=     82 b=     82 common=     82 only_a=     0 only_b=     0 sim=1.0000
+__TEXT,__objc_classname      a=      9 b=      9 common=      9 only_a=     0 only_b=     0 sim=1.0000
+__TEXT,__objc_methname       a=     66 b=     66 common=     66 only_a=     0 only_b=     0 sim=1.0000
+__TEXT,__objc_methtype       a=     19 b=     19 common=     19 only_a=     0 only_b=     0 sim=1.0000
+__TEXT,__oslogstring         a=      0 b=      0 common=      0 only_a=     0 only_b=     0 sim=1.0000
+__TEXT,__swift5_reflstr      a=     22 b=     22 common=     22 only_a=     0 only_b=     0 sim=1.0000
+exports                      a=    326 b=    326 common=    326 only_a=     0 only_b=     0 sim=1.0000
+imports                      a=    129 b=    129 common=    129 only_a=     0 only_b=     0 sim=1.0000
+linked_libraries             a=     46 b=     46 common=     46 only_a=     0 only_b=     0 sim=1.0000
+section_sizes                a=     37 b=     37 common=     37 only_a=     0 only_b=     0 sim=1.0000
+== SignalNSE: functions
+a_functions=297 b_functions=297 matched_functions=297 func_match_pct_of_a=100.0 a_insns=9366 b_insns=9366 matched_insns=9366 insn_match_pct_of_a=100.0 unmatched_a=0 unmatched_b=0
+== SignalShareExtension: features
+__TEXT,__cstring             a=    140 b=    140 common=    140 only_a=     0 only_b=     0 sim=1.0000
+__TEXT,__objc_classname      a=      9 b=      9 common=      9 only_a=     0 only_b=     0 sim=1.0000
+__TEXT,__objc_methname       a=    137 b=    137 common=    137 only_a=     0 only_b=     0 sim=1.0000
+__TEXT,__objc_methtype       a=     23 b=     23 common=     23 only_a=     0 only_b=     0 sim=1.0000
+__TEXT,__oslogstring         a=      0 b=      0 common=      0 only_a=     0 only_b=     0 sim=1.0000
+__TEXT,__swift5_reflstr      a=     42 b=     42 common=     42 only_a=     0 only_b=     0 sim=1.0000
+exports                      a=    713 b=    713 common=    713 only_a=     0 only_b=     0 sim=1.0000
+imports                      a=    156 b=    156 common=    156 only_a=     0 only_b=     0 sim=1.0000
+linked_libraries             a=     47 b=     47 common=     47 only_a=     0 only_b=     0 sim=1.0000
+section_sizes                a=     40 b=     40 common=     40 only_a=     0 only_b=     0 sim=1.0000
+== SignalShareExtension: functions
+a_functions=647 b_functions=647 matched_functions=647 func_match_pct_of_a=100.0 a_insns=23419 b_insns=23419 matched_insns=23419 insn_match_pct_of_a=100.0 unmatched_a=0 unmatched_b=0
+done: verify/out/controls/planted_C

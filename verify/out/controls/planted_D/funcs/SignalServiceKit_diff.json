@@ -1,0 +1,241 @@
+{
+ "a": "verify/out/controls/planted_D/funcs/SignalServiceKit_ref.json",
+ "b": "verify/out/controls/planted_D/funcs/SignalServiceKit_cand.json",
+ "a_functions": 82839,
+ "b_functions": 82840,
+ "matched_functions": 82817,
+ "a_insns": 4267966,
+ "b_insns": 4268038,
+ "matched_insns": 4260096,
+ "func_match_pct_of_a": 99.973,
+ "insn_match_pct_of_a": 99.816,
+ "unmatched_in_a": [
+  {
+   "addr": "0xc454cc",
+   "n_insns": 3612,
+   "fp": "35057d849aade1ca000df03b684ef8a478c0e205198385093d6024f109b02ea0"
+  },
+  {
+   "addr": "0xc59378",
+   "n_insns": 811,
+   "fp": "165bddbeab7c027dd6c4a8cf326de3d5ab20ab83dcbe38d63bcbcdc15465cccb"
+  },
+  {
+   "addr": "0xbed828",
+   "n_insns": 808,
+   "fp": "366d8346111ccd85f39aa9d38eaac9cc1bbe0eb1183fefd47157b33514116a64"
+  },
+  {
+   "addr": "0x756674",
+   "n_insns": 538,
+   "fp": "c4319abc1b656a4cc0688eb605ec85cfdd4e379c3032236d0cc914340899a667"
+  },
+  {
+   "addr": "0x71cc2c",
+   "n_insns": 353,
+   "fp": "10878f0198ab5b85a9b7186822f85eb25d4860fcac3687f4415993c127000522"
+  },
+  {
+   "addr": "0xc384bc",
+   "n_insns": 332,
+   "fp": "6eaf83f92b1335b99632bcbc9d6ddd211f11d7e3d04b6b21056bc8bdaeec8d19"
+  },
+  {
+   "addr": "0x19899c",
+   "n_insns": 166,
+   "fp": "7806bcfe0ba26e37486ef58b2d86b09146d3711d997734d7fc971bffc6f7c9f2"
+  },
+  {
+   "addr": "0x19ab48",
+   "n_insns": 122,
+   "fp": "a5bb6b497f89fb9baa7d420493955f4c4c3d6789557a2563b50089586ac63122"
+  },
+  {
+   "addr": "0x19a880",
+   "n_insns": 109,
+   "fp": "cd7f9c985fa52e47afd1efecdd3f53d544e7de778916ce8d72d0540500012ae6"
+  },
+  {
+   "addr": "0x1983f8",
+   "n_insns": 104,
+   "fp": "21095056be8749a3c1cf8a71ae649de599bf973c27c1752e9c424b0f5a2255b7"
+  },
+  {
+   "addr": "0x71bd80",
+   "n_insns": 95,
+   "fp": "6da4b5c877f131e7d7d4a65af804f7cefa03d0fda10ec5a51f846c24ecb6360d"
+  },
+  {
+   "addr": "0x71bf10",
+   "n_insns": 94,
+   "fp": "e232ca79e55a352135b2e3520d1cee3906e156c213b2fcaec90b0d661a5efcdd"
+  },
+  {
+   "addr": "0x71c8d8",
+   "n_insns": 92,
+   "fp": "0c3bc45e95716b38751364e1a754c11ed33cfa26232841bb47a3681828c992c4"
+  },
+  {
+   "addr": "0x71d250",
+   "n_insns": 89,
+   "fp": "4d0a87bc08ccd367eda54e74c4ce5774f5e0126c3f15e0b08208b913f555152d"
+  },
+  {
+   "addr": "0x1b2cd0",
+   "n_insns": 77,
+   "fp": "d476bccfd959d1757daeaf74542d2abf57493146c68df41e3d69cdb8247a302e"
+  },
+  {
+   "addr": "0x1b3694",
+   "n_insns": 77,
+   "fp": "4c5d215c62450df3e0dedefdac341f733fd09df03313d1b0be5791462051916a"
+  },
+  {
+   "addr": "0x71caf0",
+   "n_insns": 76,
+   "fp": "c959f500db5bfa6c9a9190dafcef94006cb1dc66d21784338bf77588da7a72ff"
+  },
+  {
+   "addr": "0x1b482c",
+   "n_insns": 75,
+   "fp": "383257fb6b812f896db2ad02664f2e6c87d7fa32128cf6662ccdccf7631f5715"
+  },
+  {
+   "addr": "0x1b2a84",
+   "n_insns": 68,
+   "fp": "5e20887c740b866c317f307baf0abc0361091d2a4fbe33eec7ad8871291f0d82"
+  },
+  {
+   "addr": "0x1b3460",
+   "n_insns": 65,
+   "fp": "76cb329401d2ef7fd4bb6ff2b02f38308a48a2b6e088dfacea4004e5d35f3557"
+  },
+  {
+   "addr": "0x1b4600",
+   "n_insns": 65,
+   "fp": "f809da7c148024942459b1001d129ae9636349fc12a521f75155501f0a7ef4d8"
+  },
+  {
+   "addr": "0x71ba84",
+   "n_insns": 42,
+   "fp": "9622856c3b514076d88a288e254b5ec12fabbde751f4f16673106907a0cbcfca"
+  }
+ ],
+ "unmatched_in_b": [
+  {
+   "addr": "0xc455ec",
+   "n_insns": 3612,
+   "fp": "58c143ad32610264153061a0b7b7bd486a98be1b13baa6b56d03da2d5c0c9ba6"
+  },
+  {
+   "addr": "0xc59498",
+   "n_insns": 811,
+   "fp": "945205f1882bea82c4727a6258ce213a00e3206dbaca62c61a1eac030f00cd33"
+  },
+  {
+   "addr": "0xbed94c",
+   "n_insns": 807,
+   "fp": "d894d3bd38600f9e2fc1e0b419564e6d350fc6e1bebd827767967f0069574b73"
+  },
+  {
+   "addr": "0x756798",
+   "n_insns": 538,
+   "fp": "a916ab9e80bdb3115a3239ca667381fe7d2896565a17f62b5ac4e7d124d26ca3"
+  },
+  {
+   "addr": "0x71cd50",
+   "n_insns": 353,
+   "fp": "587221b9148ef46768d701b428c3ed36833539dd71f8ed04565125cebd4a3e20"
+  },
+  {
+   "addr": "0xc385dc",
+   "n_insns": 332,
+   "fp": "dab75e61d780c8cb787c869f18ab43ffa3c3a0443b46eb59c8f17b813f82db79"
+  },
+  {
+   "addr": "0x19899c",
+   "n_insns": 166,
+   "fp": "881233a91b9cd5b99f19f8fca14969c04b882829e1dbae1cb1f00959bf9ea96d"
+  },
+  {
+   "addr": "0x19ab48",
+   "n_insns": 122,
+   "fp": "314b929a83acc14a6aa355f03982e2a546fa86fc562d83c337eed3f9106a5b54"
+  },
+  {
+   "addr": "0x19a880",
+   "n_insns": 109,
+   "fp": "be2f2eaf2083da89ed653a892d74b93894e774628d8decba016d9c70ce9b1891"
+  },
+  {
+   "addr": "0x1983f8",
+   "n_insns": 104,
+   "fp": "6e4ee420a6efdaa1962930013cc91c18c504e3d217094758d3b7ce54499869d4"
+  },
+  {
+   "addr": "0x71bea4",
+   "n_insns": 95,
+   "fp": "23cbb617306df4886bd2b958043e7fe8977fefcaf2f63ca7a19ca8ee05c0ac8f"
+  },
+  {
+   "addr": "0x71c034",
+   "n_insns": 94,
+   "fp": "aefd445d9483b83018d8d8a16ff2543ad43a9926753f9162dca4610a9a2f98e6"
+  },
+  {
+   "addr": "0x71c9fc",
+   "n_insns": 92,
+   "fp": "046dc0112f7e0a88acde767a0faf3d27cd8b06989ac222354e4a4a4a8d8a22d2"
+  },
+  {
+   "addr": "0x71d374",
+   "n_insns": 89,
+   "fp": "81865a434f2316109954464c20727e24a6a3883b21ab54b5922c040542d4d78d"
+  },
+  {
+   "addr": "0x1b2cd0",
+   "n_insns": 77,
+   "fp": "848919f6922da237ea55d417414f2793db96837fef947db26a983727da2be78e"
+  },
+  {
+   "addr": "0x1b3694",
+   "n_insns": 77,
+   "fp": "c6e3faac33639308a9536f6a65df9bffc5e46715ce2d55717e40c1b7b2552335"
+  },
+  {
+   "addr": "0x71cc14",
+   "n_insns": 76,
+   "fp": "51699d944538aea1b9fc220d55f8d8e8da25300d5f15afb7fee8bf1082dfd2d1"
+  },
+  {
+   "addr": "0x1b482c",
+   "n_insns": 75,
+   "fp": "5df7ffea9968c36d9bb7b09a30c506148d26903609fd556d395fece6165ff5e7"
+  },
+  {
+   "addr": "0x4748b8",
+   "n_insns": 73,
+   "fp": "a3093be6ab51581906e1f21dd17992f0771c8eb9376c1c5d5b926b2abf74c9ce"
+  },
+  {
+   "addr": "0x1b2a84",
+   "n_insns": 68,
+   "fp": "d7758227f16f6b2d17ff9c3ee0d083553e98b9639cebed452a791618e534aa75"
+  },
+  {
+   "addr": "0x1b3460",
+   "n_insns": 65,
+   "fp": "4873033140ac699eeab45e6735e9763664bd445ab9c6db667b0754239bcb8b10"
+  },
+  {
+   "addr": "0x1b4600",
+   "n_insns": 65,
+   "fp": "821aa1d4245c6e9d1c7c63a0577c0e50f82776dc34ba41194fcbc2d7043f1469"
+  },
+  {
+   "addr": "0x71bba8",
+   "n_insns": 42,
+   "fp": "44c9a6072bb796cd7fffd17cdeb2fe18b2e98ab4597c071ba6fbd177bf5b5869"
+  }
+ ]
+}

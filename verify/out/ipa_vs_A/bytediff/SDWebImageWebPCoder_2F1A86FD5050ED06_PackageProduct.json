@@ -1,0 +1,14 @@
+{
+ "a": "signal_dec/Payload/Signal.app/Frameworks/SDWebImageWebPCoder_2F1A86FD5050ED06_PackageProduct.framework/SDWebImageWebPCoder_2F1A86FD5050ED06_PackageProduct",
+ "b": "/Volumes/workspace/build-A.xcarchive/Products/Applications/Signal.app/Frameworks/SDWebImageWebPCoder_2F1A86FD5050ED06_PackageProduct.framework/SDWebImageWebPCoder_2F1A86FD5050ED06_PackageProduct",
+ "a_size_unsigned": 103168,
+ "b_size_unsigned": 103168,
+ "identical": false,
+ "differing_bytes": 1,
+ "by_region": {
+  "mach_header+load_commands": 1
+ },
+ "first_offset": {
+  "mach_header+load_commands": "0x939"
+ }
+}
