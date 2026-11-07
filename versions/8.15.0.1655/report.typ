@@ -29,11 +29,11 @@
 ]
 
 #note[
-  *Result.* The compiled code (`__TEXT,__text`) of all 23 binaries in the App Store app is *byte-identical* to a local build of tag `8.15.0.1655` with Xcode 26.5 (17F42). That covers Signal's five own binaries and all 18 bundled frameworks. Every other difference falls into a category already explained in the #link("https://github.com/commandersaki/signal-ios-build-verification/blob/main/versions/8.14/report.pdf")[8.14 report]: signature size, UUID, linker GOT-slot order (with every stub and pointer resolving to the same target), build metadata in plists, and bitmaps rasterised at build time from identical sources.
+  *Result.* The compiled code (`__TEXT,__text`) of all 23 binaries in the App Store app is *byte-identical* to a local build of tag `8.15.0.1655` with Xcode 26.5 (17F42). That covers Signal's five own binaries and all 18 bundled frameworks. Every other difference falls into a category already explained in the #link("https://github.com/commandersaki/signal-ios-build-verification/blob/main/versions/8.14.0.1637/report.pdf")[8.14 report]: signature size, UUID, linker GOT-slot order (with every stub and pointer resolving to the same target), build metadata in plists, and bitmaps rasterised at build time from identical sources.
 ]
 
 = Method
-This is the same method as #link("https://github.com/commandersaki/signal-ios-build-verification/blob/main/report/report.pdf")[8.35.1] and #link("https://github.com/commandersaki/signal-ios-build-verification/blob/main/versions/8.14/report.pdf")[8.14], which describe it in full.
+This is the same method as #link("https://github.com/commandersaki/signal-ios-build-verification/blob/main/report/report.pdf")[8.35.1] and #link("https://github.com/commandersaki/signal-ios-build-verification/blob/main/versions/8.14.0.1637/report.pdf")[8.14], which describe it in full.
 + The source is cloned at the Xcode Cloud path `/Volumes/workspace/repository`.
 + `make dependencies` fetches the dependencies.
 + An unsigned `xcodebuild archive` runs with the scheme's App Store Release configuration, using the exact Xcode build recorded in the shipped `Info.plist`.
@@ -66,14 +66,22 @@ These residual differences are the ones Telegram's `ipadiff.py` does not normali
 As for earlier versions:
 - The public source itself is not reviewed.
 - Prebuilt dependencies (libsignal, RingRTC, WebRTC, LibMobileCoin) are checked against their pinned versions, not rebuilt from their own source.
-- The causes of the UUID and rasterisation differences are inferred, not proven.
+- The causes of the UUID and rasterisation differences are inferred, not proven. For the assets, re-running the logged `actool` step with the iOS 26.5 Simulator runtime matching Signal's SDK (23F73), as well as with 23F77, gave the same differences, so the runtime is ruled out; the GPU or the host macOS remain (`out/asset_runtime_test.txt`).
 
 = Reproducing
 ```sh
 git clone https://github.com/signalapp/Signal-iOS.git /Volumes/workspace/repository
 cd /Volumes/workspace/repository && git checkout 8.15.0.1655 && make dependencies
 # xcodebuild archive with Xcode 26.5 (17F42), as in the 8.35.1 report, then:
-verify/compare_build.sh org.whispersystems.signal_8.15.decrypted.ipa <built Signal.app> versions/8.15/out/ipa_vs_build
-verify/explain_residuals.sh org.whispersystems.signal_8.15.decrypted.ipa <built Signal.app> versions/8.15/out/residuals
+verify/compare_build.sh org.whispersystems.signal_8.15.decrypted.ipa <built Signal.app> versions/8.15.0.1655/out/ipa_vs_build
+verify/explain_residuals.sh org.whispersystems.signal_8.15.decrypted.ipa <built Signal.app> versions/8.15.0.1655/out/residuals
 ```
-The decrypted IPA is attached to the #link("https://github.com/commandersaki/signal-ios-build-verification/releases/tag/signal-8.15")[`signal-8.15` release]. The app is also in `versions/8.15/signal_dec/`, and all outputs are in `versions/8.15/out/`.
+The decrypted IPA is attached to the #link("https://github.com/commandersaki/signal-ios-build-verification/releases/tag/signal-8.15")[`signal-8.15` release]. The app is also in `versions/8.15.0.1655/signal_dec/`, and all outputs are in `versions/8.15.0.1655/out/`.
+
+= Changelog
+#table(
+  columns: (auto, 1fr),
+  table.header([Date], [Change]),
+  [7 November 2026], [First published version, at `versions/8.15/`.],
+  [7 November 2026], [*Moved* to `versions/8.15.0.1655/`; paths updated. *Added* the Simulator-runtime test to the limitations. *Added* this changelog.],
+)

@@ -108,7 +108,7 @@ With code signatures removed, each binary was compared byte for byte, and every 
   [`AppIcon60x60@2x.png`,\ `AppIcon76x76@2x~ipad.png`], [#ok Images with no executable content. The icons come from Icon Composer `.icon` files, which `actool` rasterises during the build. Decoded, 1,933 of 14,400 and 3,060 of 23,104 pixels differ, by at most 7/255 and 8/255 in one channel. The images look the same.],
 )
 
-== Asset catalogs
+== Asset catalogs <assets>
 `ipadiff.py` skips `.car` files. Here they were compared rendition by rendition with Apple's `assetutil`:
 - *`SignalNSE` catalog:* 8 of 8 renditions are identical.
 - *`SignalShareExtension` catalog:* 2,370 of 2,378 are identical.
@@ -119,7 +119,7 @@ The differing ones fall into three groups:
 - *Packed atlases:* 4. These are sheets of small rasterised images.
 - *App icons:* the 72 rasterised "Icon Image" renditions. They exist in both catalogs with the same names, idioms, scales and sizes. All 290 other app-icon renditions are identical, including every vector layer, colour and gradient. The build also contains 24 1024-pixel marketing icons that the App Store strips.
 
-Every differing rendition is a bitmap rasterised during the build from a source that is identical in both. The likely cause is rasterisation on a different macOS version (25E246 versus 25G229), but that was not tested by building on Signal's version. Assets are images and colours with no executable content.
+Every differing rendition is a bitmap rasterised during the build from a source that is identical in both. The cause has been narrowed down but not proven. Xcode 26.5 renders these bitmaps inside an iOS Simulator agent (`AssetCatalogSimulatorAgent`). A later test on 8.15, which has the same assets, ruled out the Simulator runtime: re-running the logged `actool` step with the iOS 26.5 runtime matching Signal's SDK (23F73) and with the newer 23F77 gave the same differences (`versions/8.15.0.1655/out/asset_runtime_test.txt`). The remaining candidates are the GPU, since the agent draws with Metal on the host's graphics hardware and Signal builds on Xcode Cloud, or the host macOS version (25E246 versus 25G229). Neither could be tested here. The same test showed one vector raster (`clock-explorer`) varying between two runs on the same Mac. For 8.35.1, built with Xcode 27.1, whose renderer is different (`AssetCatalogAgent-AssetRuntime`), only the app icons differed, by at most 1/255, despite a larger macOS gap. Assets are images and colours with no executable content.
 
 == Telegram's `ipadiff.py` on this build <bh-tool>
 Running `ipadiff.py` (Telegram-iOS commit `9f4b352`) on our build reproduces BarbossHack's result. Our build was ad-hoc signed exactly as his workflow does. The tool reports `SignalUI`, `SignalServiceKit`, `Info.plist` and the two icons as different. The one exception is `LibMobileCoin`, which it reports as equal.
@@ -152,20 +152,29 @@ The binaries flagged change from build to build while the compiled code stays id
 = Limitations
 - *The public source itself is not reviewed.* This shows the App Store binary corresponds to tag `8.14.0.1637`. It does not show that the source is free of backdoors.
 - *Prebuilt libraries are only checked against their pins.* libsignal's Rust library, RingRTC, WebRTC and LibMobileCoin are fetched prebuilt at checksum- or tag-pinned versions. This report shows the shipped binaries equal those pinned artifacts linked as the tag specifies. It does not rebuild them from their own source.
-- *Some causes are explained but not proven.* The UUID and asset-rasterisation differences are attributed to build-environment details that were not reproduced. Two local builds of 8.14 produced different GOT slot orders, so that ordering varies between builds. Those two builds used different `xcodebuild` commands, though; the same-command test was done for 8.35.1. None of these differences touches compiled code, which is identical.
+- *Some causes are explained but not proven.* The UUID and asset-rasterisation differences are attributed to build-environment details that were not reproduced (for the assets, the Simulator runtime has been ruled out; see @assets). Two local builds of 8.14 produced different GOT slot orders, so that ordering varies between builds. Those two builds used different `xcodebuild` commands, though; the same-command test was done for 8.35.1. None of these differences touches compiled code, which is identical.
 - *One version.* The result is for 8.14 (1637), and separately for 8.35.1 (1964). It says nothing about other releases.
 
 = Reproducing
-Everything is in #link("https://github.com/commandersaki/signal-ios-build-verification")[`commandersaki/signal-ios-build-verification`]. This report and its outputs are in `versions/8.14/`; BarbossHack's decrypted app is in `versions/8.14/signal_dec/`. The scripts are the shared ones in `verify/`.
+Everything is in #link("https://github.com/commandersaki/signal-ios-build-verification")[`commandersaki/signal-ios-build-verification`]. This report and its outputs are in `versions/8.14.0.1637/`; BarbossHack's decrypted app is in `versions/8.14.0.1637/signal_dec/`. The scripts are the shared ones in `verify/`.
 ```sh
 # 1. Source at the Xcode Cloud path, Xcode 26.5 (17F42) selected via DEVELOPER_DIR
 git clone https://github.com/signalapp/Signal-iOS.git /Volumes/workspace/repository
 cd /Volumes/workspace/repository && git checkout 8.14.0.1637 && make dependencies
 # 2. Build: the xcodebuild archive command in section 3
 # 3. Compare: functions/strings/symbols, then account for every other byte and file
-APP=versions/8.14/signal_dec/Payload/Signal.app
+APP=versions/8.14.0.1637/signal_dec/Payload/Signal.app
 BUILT=/Volumes/workspace/build-814.xcarchive/Products/Applications/Signal.app
-verify/compare_build.sh $APP $BUILT versions/8.14/out/ipa_vs_build
-verify/explain_residuals.sh $APP $BUILT versions/8.14/out/residuals
+verify/compare_build.sh $APP $BUILT versions/8.14.0.1637/out/ipa_vs_build
+verify/explain_residuals.sh $APP $BUILT versions/8.14.0.1637/out/residuals
 ```
 #text(9pt, fill: luma(80))[Credit: BarbossHack for the decrypted IPAs and the original workflow; Telegram for `ipadiff.py`; DrWhax for unfairplay.]
+
+// ---------- changelog ----------
+= Changelog
+#table(
+  columns: (auto, 1fr),
+  table.header([Date], [Change]),
+  [7 November 2026], [First published version, at `versions/8.14/`.],
+  [7 November 2026], [*Moved* to `versions/8.14.0.1637/`; paths updated. *Changed* the cause given for the asset-rasterisation differences (@assets): it previously named the macOS version as the likely cause. A test on 8.15 ruled out the Simulator runtime; the GPU or the host macOS remain. *Added* this changelog.],
+)

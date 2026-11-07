@@ -1,0 +1,25 @@
+Asset rasterisation test for 8.15 (Xcode 26.5 17F42 renders assets via AssetCatalogSimulatorAgent).
+The logged actool command for the main catalog was re-run with each installed iOS 26.5 Simulator runtime and compared with the App Store IPA.
+Installed runtimes: iOS 26.5 (23F77);iOS 26.5 (23F73);
+
+=== runtime 23F77 vs App Store
+AppIcon60x60@2x.png        120x120 bpp=4: pixels identical=False differing_pixels=1933/14400 max_channel_delta=7
+AppIcon76x76@2x~ipad.png   152x152 bpp=4: pixels identical=False differing_pixels=3060/23104 max_channel_delta=8
+Assets.car: renditions ref=2744 cand=2768; same identity=2672; identical=2663; digest differs=9; ref-only=72; cand-only=96
+   packed atlas (raster): 2 ['ZZZZPackedAsset-1.0.0-gamut1', 'ZZZZPackedAsset-2.0.0-gamut0']
+   raster of identical vector source: 7 ['clock-explorer', 'official_wallpaper_reduced', 'safetytip_240_01', 'safetytip_240_05', 'verificationcode_alert_96']
+   ref-only renditions without a same-name/type/idiom/scale/size counterpart: 0
+   cand-only renditions without a counterpart: 24 [('AppIcon', 'Icon Image', 'pad', 1, 1024), ('AppIcon', 'Icon Image', 'phone', 1, 1024), ('AppIcon-bubbles', 'Icon Image', 'pad', 1, 1024), ('AppIcon-bubbles', 'Icon Image', 'phone', 1, 1024)] ...
+
+=== runtime 23F73 vs App Store
+AppIcon60x60@2x.png        120x120 bpp=4: pixels identical=False differing_pixels=1933/14400 max_channel_delta=7
+AppIcon76x76@2x~ipad.png   152x152 bpp=4: pixels identical=False differing_pixels=3060/23104 max_channel_delta=8
+Assets.car: renditions ref=2744 cand=2768; same identity=2672; identical=2664; digest differs=8; ref-only=72; cand-only=96
+   packed atlas (raster): 2 ['ZZZZPackedAsset-1.0.0-gamut1', 'ZZZZPackedAsset-2.0.0-gamut0']
+   raster of identical vector source: 6 ['official_wallpaper_reduced', 'safetytip_240_01', 'safetytip_240_05', 'verificationcode_alert_96']
+   ref-only renditions without a same-name/type/idiom/scale/size counterpart: 0
+   cand-only renditions without a counterpart: 24 [('AppIcon', 'Icon Image', 'pad', 1, 1024), ('AppIcon', 'Icon Image', 'phone', 1, 1024), ('AppIcon-bubbles', 'Icon Image', 'pad', 1, 1024), ('AppIcon-bubbles', 'Icon Image', 'phone', 1, 1024)] ...
+
+=== runtime 23F77 re-run vs our full build (same runtime): run-to-run variation
+Assets.car: renditions ref=2768 cand=2768; same identity=2672; identical=2671; digest differs=1; ref-only=96; cand-only=96
+   raster of identical vector source: 1 ['clock-explorer']

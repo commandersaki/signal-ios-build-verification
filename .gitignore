@@ -7,11 +7,11 @@ iTunesMetadata.plist
 META-INF/
 
 # Large regenerated outputs
-verify/out/**/*_dump/
-verify/out/**/*_ref.json
-verify/out/**/*_cand.json
-verify/out/**/inventory_ref.json
-verify/out/**/inventory_cand.json
+versions/*/out/**/*_dump/
+versions/*/out/**/*_ref.json
+versions/*/out/**/*_cand.json
+versions/*/out/**/inventory_ref.json
+versions/*/out/**/inventory_cand.json
 
 __pycache__/
 .DS_Store
