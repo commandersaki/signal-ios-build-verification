@@ -1,0 +1,20 @@
+-- LibMobileCoin
+__stubs: 248 stubs, 248 resolve identically; 1 differ in bytes, of which 1 still resolve to the same target
+__objc_stubs: 3 stubs, 3 resolve identically; 3 differ in bytes, of which 3 still resolve to the same target
+header: 18 differing bytes; 16 in LC_UUID; others at ['0xc59', '0xc5a']
+__const words differing: 0, resolving to the same symbol through the GOT: 0
+-- SignalServiceKit
+__stubs: 1834 stubs, 1834 resolve identically; 0 differ in bytes, of which 0 still resolve to the same target
+__objc_stubs: 986 stubs, 986 resolve identically; 0 differ in bytes, of which 0 still resolve to the same target
+header: 18 differing bytes; 16 in LC_UUID; others at ['0xed9', '0xeda']
+__const words differing: 19, resolving to the same symbol through the GOT: 19
+-- SignalUI
+__stubs: 1667 stubs, 1667 resolve identically; 1 differ in bytes, of which 1 still resolve to the same target
+__objc_stubs: 1158 stubs, 1158 resolve identically; 1158 differ in bytes, of which 1158 still resolve to the same target
+header: 18 differing bytes; 16 in LC_UUID; others at ['0xe39', '0xe3a']
+__const words differing: 0, resolving to the same symbol through the GOT: 0
+-- Signal
+__stubs: 4076 stubs, 4076 resolve identically; 1 differ in bytes, of which 1 still resolve to the same target
+__objc_stubs: 1667 stubs, 1667 resolve identically; 1667 differ in bytes, of which 1667 still resolve to the same target
+header: 18 differing bytes; 16 in LC_UUID; others at ['0xed1', '0xed2']
+__const words differing: 0, resolving to the same symbol through the GOT: 0

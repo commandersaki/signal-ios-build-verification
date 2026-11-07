@@ -1,9 +1,11 @@
 #!/bin/bash
 # Run every comparison layer for one (reference app, candidate app) pair.
-# Usage: compare_build.sh <reference.app> <candidate.app> <out_dir>
+# Usage: compare_build.sh <reference.app|.ipa> <candidate.app|.ipa> <out_dir>
 set -euo pipefail
-REF="$1"; CAND="$2"; OUT="$3"
 V="$(cd "$(dirname "$0")" && pwd)"
+. "$V/app_path.sh"
+APPTMP="$(mktemp -d)"; trap 'rm -rf "$APPTMP"' EXIT
+REF="$(app_path "$1" "$APPTMP/ref")"; CAND="$(app_path "$2" "$APPTMP/cand")"; OUT="$3"
 PY="python3 -I"
 mkdir -p "$OUT"/{features,funcs,crosscheck}
 

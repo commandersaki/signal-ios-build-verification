@@ -1,0 +1,1 @@
+23 signed Mach-O binaries, 25782 code-signature pages: 6187 match as-is; 19572 differ inside FairPlay-encrypted ranges (expected: those pages are now decrypted); 23 differ outside them; after restoring cryptid=1, 0 still differ outside them

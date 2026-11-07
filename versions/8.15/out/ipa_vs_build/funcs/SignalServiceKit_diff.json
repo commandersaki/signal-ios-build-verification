@@ -1,0 +1,14 @@
+{
+ "a": "out/v8.15/ipa_vs_build/funcs/SignalServiceKit_ref.json",
+ "b": "out/v8.15/ipa_vs_build/funcs/SignalServiceKit_cand.json",
+ "a_functions": 79882,
+ "b_functions": 79882,
+ "matched_functions": 79882,
+ "a_insns": 4311722,
+ "b_insns": 4311722,
+ "matched_insns": 4311722,
+ "func_match_pct_of_a": 100.0,
+ "insn_match_pct_of_a": 100.0,
+ "unmatched_in_a": [],
+ "unmatched_in_b": []
+}

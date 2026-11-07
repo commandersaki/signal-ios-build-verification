@@ -1,0 +1,14 @@
+{
+ "a": "$TMPDIR/...",
+ "b": "/Volumes/workspace/build-815.xcarchive/Products/Applications/Signal.app/Frameworks/LibSignalClient.framework/LibSignalClient",
+ "a_size_unsigned": 15237112,
+ "b_size_unsigned": 15237112,
+ "identical": false,
+ "differing_bytes": 18,
+ "by_region": {
+  "mach_header+load_commands": 18
+ },
+ "first_offset": {
+  "mach_header+load_commands": "0xd49"
+ }
+}

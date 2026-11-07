@@ -1,0 +1,151 @@
+-- PlugIns/SignalShareExtension.appex/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "25E246"
+---
+>   "BuildMachineOSBuild" => "25G229"
+14c14
+<   "CFBundleVersion" => "1655"
+---
+>   "CFBundleVersion" => "0"
+-- PlugIns/SignalNSE.appex/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "25E246"
+---
+>   "BuildMachineOSBuild" => "25G229"
+14c14
+<   "CFBundleVersion" => "1655"
+---
+>   "CFBundleVersion" => "0"
+-- Frameworks/SignalServiceKit.framework/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "25E246"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/BonMot.framework/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "25E246"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/LibSignalClient.framework/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "25E246"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/MobileCoin.framework/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "25E246"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/PureLayout.framework/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "25E246"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/LibMobileCoin.framework/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "25E246"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/SDWebImageWebPCoder.framework/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "25E246"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/blurhash.framework/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "25E246"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/CocoaLumberjack.framework/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "25E246"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/libPhoneNumber_iOS.framework/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "25E246"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/GRDB.framework/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "25E246"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/SignalRingRTC.framework/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "25E246"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/Logging.framework/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "25E246"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/SwiftProtobuf.framework/SwiftProtobuf.bundle/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "25E246"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/SwiftProtobuf.framework/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "25E246"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/SDWebImage.framework/SDWebImage.bundle/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "25E246"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/SDWebImage.framework/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "25E246"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/SQLCipher.framework/SQLCipher.bundle/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "25E246"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/SQLCipher.framework/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "25E246"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/SignalUI.framework/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "25E246"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/Lottie.framework/LottiePrivacyInfo.bundle/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "25E246"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/Lottie.framework/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "25E246"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/libwebp.framework/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "25E246"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Info.plist
+9c9
+<     "DateTime" => "Wed Jun 10 20:05:51 UTC 2026"
+---
+>     "DateTime" => "Sat  7 Nov 2026 04:27:48 UTC"
+11c11
+<     "Timestamp" => 1781121951
+---
+>     "Timestamp" => 1794025668
+14c14
+<   "BuildMachineOSBuild" => "25E246"
+---
+>   "BuildMachineOSBuild" => "25G229"
+123,124c123
+<   "CFBundleVersion" => "1655"
+<   "DTAppStoreToolsBuild" => "17F41"
+---
+>   "CFBundleVersion" => "0"

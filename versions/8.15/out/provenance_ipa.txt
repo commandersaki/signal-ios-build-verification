@@ -1,0 +1,45 @@
+ipa_file: org.whispersystems.signal_8.15.decrypted.ipa sha256 7629023a052318e5a765a36300fe309b00939704e3cb970ae3674c76436ad7e4
+date: 2026-11-07T04:23:00Z
+macos: 26.7 (25G229)
+xcode: Xcode 26.5 Build version 17F42 
+developer_dir: /Applications/Xcode-26.5.0.app/Contents/Developer
+metal: Apple metal version 32023.883 (metalfe-32023.883)
+python: Python 3.15.2
+ipsw: Version: 3.1.743, BuildCommit: b2c156960c79b0eefe0885dbb32cce7eef77cf2d
+radare2: radare2 6.2.6 +0 abi:174 @ darwin-arm_64
+diffoscope: diffoscope 336
+
+source_dir: /Volumes/workspace/repository
+source_commit: a619caaac35ffdb5d56de43aeeb2dbad0e2b9022
+source_describe: 8.15.0.1655
+source_dirty: 0 modified tracked files
+pods_commit: 1a4acf84fc43f0e68b29a5a11d82cdc28c4ed665
+
+ipa_app: $TMPDIR/...
+ipa_version: 8.15 (1655)
+ipa_built_with: Xcode 2650 build 17F42
+
+ipa_macho_sha256:
+  edf156b027cbf2dd45a0081b96e1f1320649a5055091a946dba80542386bb707  Frameworks/blurhash.framework/blurhash
+  2309f46d43548cce81a30107172a2e2aceaccba84a740bd60c11411f1af8c19a  Frameworks/BonMot.framework/BonMot
+  cca425c2a097c2d01b13aa80374dd1184ad410688182096babada3a25365e484  Frameworks/CocoaLumberjack.framework/CocoaLumberjack
+  4d8661460afee6677a1f307a059bd46692f374ab50d73482eacee6a61d13ac30  Frameworks/GRDB.framework/GRDB
+  d72d38cdac71272bcf6bc61e44eb74a27bad4d89713cb0a9d4321c7914a80df3  Frameworks/LibMobileCoin.framework/LibMobileCoin
+  2f716f9fcecb564dde40232094e1ee6c0a6136c8509562ee942c26064c3922f5  Frameworks/libPhoneNumber_iOS.framework/libPhoneNumber_iOS
+  f68bb0bbf52dae804f5fc3b9849f24d3f870d95479c569911166b8e65efaff45  Frameworks/LibSignalClient.framework/LibSignalClient
+  164d67733ca97b2e2f67707e45f1b562dcb73c0be7016cf8fffa4c7679b6fef7  Frameworks/libwebp.framework/libwebp
+  b0f3ab33d5366c4259ec8e1813081da01f367fabf9a4f710a73f20659db058fb  Frameworks/Logging.framework/Logging
+  e784952758d76d960cf094493401b38980e4123da1470f09378506c72d6291fa  Frameworks/Lottie.framework/Lottie
+  d7700923071116ef84bbdd31817824b7695d665c0723cc74caa3b4df7cc07ed8  Frameworks/MobileCoin.framework/MobileCoin
+  2564c02f0fd7937e51d68323910a0ded5060f8474086bcfc13bcec1547bb9706  Frameworks/PureLayout.framework/PureLayout
+  ee449c47f44e7f9de295f3e7ebb74b5dab10c0323c90452c6109c10a5b3249fd  Frameworks/SDWebImage.framework/SDWebImage
+  ced275038bee45abfc3ff387ba343699f4d80b8ded84c21e421d2e8e326f92b5  Frameworks/SDWebImageWebPCoder.framework/SDWebImageWebPCoder
+  52bc15f819daa93eabd95f302272acb648890462ce0d76229bc7db3b842cf1fc  Frameworks/SignalRingRTC.framework/SignalRingRTC
+  51b546f5ed3ca4639fd79edd659a88cb1f00e709e171a5724b09378406db8c6a  Frameworks/SignalServiceKit.framework/SignalServiceKit
+  65b52c63fb61a5e4aa0ce141e3a6fabdf2ea9e5c25ff9c82cb6743695ee39f8b  Frameworks/SignalUI.framework/SignalUI
+  0e468dbfe80344bef0b965417415f432309a5456d025e625d8b67c1266279a33  Frameworks/SQLCipher.framework/SQLCipher
+  e2b3ba23b63bb3b98d4ee17f5fc54ed9fbe974e3f4c0d7ea9ed71eb08b23a19e  Frameworks/SwiftProtobuf.framework/SwiftProtobuf
+  0196c241d5494969f67ad7c840aa6a70bb454d725ebd3077fb4cc5ef86a70b7f  Frameworks/WebRTC.framework/WebRTC
+  edae65d8dc0cc6d131fd114d029f3b49a20df34d263f880e2fcb7d0f76548e9f  PlugIns/SignalNSE.appex/SignalNSE
+  856d300fe731e7fa814d3fbf2184018ab67ccd54395eb5184aefee1391b146a1  PlugIns/SignalShareExtension.appex/SignalShareExtension
+  83c99629fdc66ddbbfa2c7837f827cd711da6f826fb01f45e3a43337aa5af76e  Signal

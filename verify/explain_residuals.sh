@@ -1,14 +1,15 @@
 #!/bin/bash
 # Account for every difference between an App Store app and a local build, file by file.
 # Complements compare_build.sh (which covers strings/symbols/functions of the 5 first-party binaries).
-# Usage: explain_residuals.sh <reference.app> <candidate.app> <out_dir>
+# Usage: explain_residuals.sh <reference.app|.ipa> <candidate.app|.ipa> <out_dir>
 set -euo pipefail
-REF="$(cd "$1" && pwd)"; CAND="$(cd "$2" && pwd)"; OUT="$3"
 V="$(cd "$(dirname "$0")" && pwd)"
+. "$V/app_path.sh"
+TMP="$(mktemp -d)"; trap 'rm -rf "$TMP"' EXIT
+REF="$(app_path "$1" "$TMP/ref")"; CAND="$(app_path "$2" "$TMP/cand")"; OUT="$3"
 PY="python3 -I"
 mkdir -p "$OUT"/{bytediff,assets}
 OUT="$(cd "$OUT" && pwd)"
-TMP="$(mktemp -d)"; trap 'rm -rf "$TMP"' EXIT
 
 machos=()
 while IFS= read -r -d '' f; do

@@ -1,0 +1,8 @@
+Different files in $TMPDIR/v815/ours/Signal.ipa and $TMPDIR/v815/org.whispersystems.signal_8.15.decrypted.ipa
+    AppIcon76x76@2x~ipad.png
+    AppIcon60x60@2x.png
+    Signal
+    Info.plist
+    Frameworks/LibMobileCoin.framework/LibMobileCoin
+    Frameworks/SignalServiceKit.framework/SignalServiceKit
+    Frameworks/SignalUI.framework/SignalUI

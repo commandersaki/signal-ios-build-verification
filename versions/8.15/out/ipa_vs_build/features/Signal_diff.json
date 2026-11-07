@@ -1,0 +1,86 @@
+{
+ "a": "out/v8.15/ipa_vs_build/features/Signal_ref.json",
+ "b": "out/v8.15/ipa_vs_build/features/Signal_cand.json",
+ "features": {
+  "__TEXT,__cstring": {
+   "a_count": 15319,
+   "b_count": 15319,
+   "common": 15319,
+   "similarity": 1.0,
+   "only_in_a": [],
+   "only_in_b": []
+  },
+  "__TEXT,__objc_classname": {
+   "a_count": 996,
+   "b_count": 996,
+   "common": 996,
+   "similarity": 1.0,
+   "only_in_a": [],
+   "only_in_b": []
+  },
+  "__TEXT,__objc_methname": {
+   "a_count": 5653,
+   "b_count": 5653,
+   "common": 5653,
+   "similarity": 1.0,
+   "only_in_a": [],
+   "only_in_b": []
+  },
+  "__TEXT,__objc_methtype": {
+   "a_count": 529,
+   "b_count": 529,
+   "common": 529,
+   "similarity": 1.0,
+   "only_in_a": [],
+   "only_in_b": []
+  },
+  "__TEXT,__oslogstring": {
+   "a_count": 1,
+   "b_count": 1,
+   "common": 1,
+   "similarity": 1.0,
+   "only_in_a": [],
+   "only_in_b": []
+  },
+  "__TEXT,__swift5_reflstr": {
+   "a_count": 9140,
+   "b_count": 9140,
+   "common": 9140,
+   "similarity": 1.0,
+   "only_in_a": [],
+   "only_in_b": []
+  },
+  "exports": {
+   "a_count": 1,
+   "b_count": 1,
+   "common": 1,
+   "similarity": 1.0,
+   "only_in_a": [],
+   "only_in_b": []
+  },
+  "imports": {
+   "a_count": 7619,
+   "b_count": 7619,
+   "common": 7619,
+   "similarity": 1.0,
+   "only_in_a": [],
+   "only_in_b": []
+  },
+  "linked_libraries": {
+   "a_count": 97,
+   "b_count": 97,
+   "common": 97,
+   "similarity": 1.0,
+   "only_in_a": [],
+   "only_in_b": []
+  },
+  "section_sizes": {
+   "a_count": 43,
+   "b_count": 43,
+   "common": 43,
+   "similarity": 1.0,
+   "only_in_a": [],
+   "only_in_b": []
+  }
+ }
+}

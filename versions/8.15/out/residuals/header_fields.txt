@@ -1,0 +1,23 @@
+blurhash                 {'__LINKEDIT.vmsize': 1, 'LC_UUID': 15}
+BonMot                   {'__LINKEDIT.vmsize': 1, 'LC_UUID': 16}
+CocoaLumberjack          {'__LINKEDIT.vmsize': 1}
+GRDB                     {'__LINKEDIT.vmsize': 1, 'LC_UUID': 16}
+LibMobileCoin            {'__LINKEDIT.vmsize': 2, 'LC_UUID': 16}
+libPhoneNumber_iOS       {'__LINKEDIT.vmsize': 1}
+LibSignalClient          {'__LINKEDIT.vmsize': 2, 'LC_UUID': 16}
+libwebp                  {'__LINKEDIT.vmsize': 2}
+Logging                  {'__LINKEDIT.vmsize': 2, 'LC_UUID': 16}
+Lottie                   {'__LINKEDIT.vmsize': 2, 'LC_UUID': 16}
+MobileCoin               {'__LINKEDIT.vmsize': 2, 'LC_UUID': 16}
+PureLayout               {'__LINKEDIT.vmsize': 1}
+SDWebImage               {'__LINKEDIT.vmsize': 1}
+SDWebImageWebPCoder      {'__LINKEDIT.vmsize': 1}
+Signal                   {'__LINKEDIT.vmsize': 2, 'LC_UUID': 16}
+SignalNSE                {'__LINKEDIT.vmsize': 2}
+SignalRingRTC            {'__LINKEDIT.vmsize': 2, 'LC_UUID': 16}
+SignalServiceKit         {'__LINKEDIT.vmsize': 2, 'LC_UUID': 16}
+SignalShareExtension     {'__LINKEDIT.vmsize': 1}
+SignalUI                 {'__LINKEDIT.vmsize': 2, 'LC_UUID': 16}
+SQLCipher                {'__LINKEDIT.vmsize': 2}
+SwiftProtobuf            {'__LINKEDIT.vmsize': 1, 'LC_UUID': 16}
+WebRTC                   {'__LINKEDIT.vmsize': 2}

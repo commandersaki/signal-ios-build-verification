@@ -17,8 +17,9 @@ This shows the shipped app is built from the public source. It does **not** show
 |---|---|---|
 | 8.35.1 (1964) | `__text` byte-identical in all first-party binaries; bundled frameworks match their pins | [`report/report.pdf`](report/report.pdf) |
 | 8.14 (1637) | `__text` byte-identical in all 23 binaries; explains why [BarbossHack's check](https://community.signalusers.org/t/add-reproducible-builds-to-the-ios-app/20516/17) flagged it | [`versions/8.14/report.pdf`](versions/8.14/report.pdf) |
+| 8.15 (1655) | `__text` byte-identical in all 23 binaries | [`versions/8.15/report.pdf`](versions/8.15/report.pdf) |
 
-The 8.35.1 report and its files stay at their original paths. Later versions go under `versions/<version>/`, each with its own decrypted app, outputs and report, and all use the shared harness in `verify/`.
+The 8.35.1 report and its files stay at their original paths. Later versions go under `versions/<version>/`, each with its own decrypted app, outputs and report, and all use the shared harness in `verify/`. Decrypted IPAs are attached to a [release](https://github.com/commandersaki/signal-ios-build-verification/releases) per version; the scripts accept an `.ipa` or an `.app` folder.
 
 ## Reproducing
 

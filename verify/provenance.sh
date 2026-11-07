@@ -1,9 +1,12 @@
 #!/bin/bash
 # Record inputs and tool versions so every result can be traced and re-run.
-# Usage: provenance.sh <ipa_app_dir> <source_repo_dir> <out.txt>
+# Usage: provenance.sh <ipa_app_dir|app.ipa> <source_repo_dir> <out.txt>
 set -u
-APP="$1"; SRC="$2"; OUT="$3"
+. "$(cd "$(dirname "$0")" && pwd)/app_path.sh"
+APPTMP="$(mktemp -d)"; trap 'rm -rf "$APPTMP"' EXIT
+IN="$1"; APP="$(app_path "$1" "$APPTMP")"; SRC="$2"; OUT="$3"
 {
+  [ "${IN%.ipa}" != "$IN" ] && echo "ipa_file: $(basename "$IN") sha256 $(shasum -a 256 "$IN" | cut -d' ' -f1)"
   echo "date: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
   echo "macos: $(sw_vers -productVersion) ($(sw_vers -buildVersion))"
   echo "xcode: $(xcodebuild -version | tr '\n' ' ')"
