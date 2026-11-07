@@ -1,0 +1,18 @@
+{
+ "a": "versions/8.14/signal_dec/Payload/Signal.app/Frameworks/SignalUI.framework/SignalUI",
+ "b": "/Volumes/workspace/build-814.xcarchive/Products/Applications/Signal.app/Frameworks/SignalUI.framework/SignalUI",
+ "a_size_unsigned": 5179992,
+ "b_size_unsigned": 5179992,
+ "identical": false,
+ "differing_bytes": 1186,
+ "by_region": {
+  "mach_header+load_commands": 18,
+  "__TEXT,__stubs": 1,
+  "__TEXT,__objc_stubs": 1167
+ },
+ "first_offset": {
+  "mach_header+load_commands": "0xe39",
+  "__TEXT,__stubs": "0x2d38d5",
+  "__TEXT,__objc_stubs": "0x2d3eed"
+ }
+}

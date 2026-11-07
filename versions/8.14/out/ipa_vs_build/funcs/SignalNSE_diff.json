@@ -1,0 +1,14 @@
+{
+ "a": "out/v8.14/ipa_vs_build/funcs/SignalNSE_ref.json",
+ "b": "out/v8.14/ipa_vs_build/funcs/SignalNSE_cand.json",
+ "a_functions": 270,
+ "b_functions": 270,
+ "matched_functions": 270,
+ "a_insns": 8443,
+ "b_insns": 8443,
+ "matched_insns": 8443,
+ "func_match_pct_of_a": 100.0,
+ "insn_match_pct_of_a": 100.0,
+ "unmatched_in_a": [],
+ "unmatched_in_b": []
+}

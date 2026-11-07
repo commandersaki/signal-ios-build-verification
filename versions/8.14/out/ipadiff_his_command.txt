@@ -1,0 +1,8 @@
+Different files in $TMPDIR/bhfull/Signal.ipa and $TMPDIR/signal_8.14.decrypted.ipa
+    Info.plist
+    AppIcon60x60@2x.png
+    Frameworks/LibMobileCoin.framework/LibMobileCoin
+    AppIcon76x76@2x~ipad.png
+    Frameworks/SignalServiceKit.framework/SignalServiceKit
+    Signal
+his-command build: __text identical in 23/23 binaries

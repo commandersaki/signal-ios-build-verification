@@ -1,0 +1,7 @@
+OK       __TEXT,__cstring             ours=  15312 segedit=  15312 only_ours=0 only_segedit=0
+OK       __TEXT,__objc_classname      ours=    994 segedit=    994 only_ours=0 only_segedit=0
+OK       __TEXT,__objc_methname       ours=   5663 segedit=   5663 only_ours=0 only_segedit=0
+OK       __TEXT,__objc_methtype       ours=    529 segedit=    529 only_ours=0 only_segedit=0
+OK       __TEXT,__swift5_reflstr      ours=   9149 segedit=   9149 only_ours=0 only_segedit=0
+OK       __TEXT,__oslogstring         ours=      1 segedit=      1 only_ours=0 only_segedit=0
+RESULT: PASS

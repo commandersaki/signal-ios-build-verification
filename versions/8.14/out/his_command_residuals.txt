@@ -1,0 +1,18 @@
+-- Signal (his-command build)
+differing bytes: 1688 {'mach_header+load_commands': 18, '__TEXT,__stubs': 1, '__TEXT,__objc_stubs': 1669}
+__stubs: 4077 stubs, 4077 resolve identically; 1 differ in bytes, of which 1 still resolve to the same target
+__objc_stubs: 1669 stubs, 1669 resolve identically; 1669 differ in bytes, of which 1669 still resolve to the same target
+header: 18 differing bytes; 16 in LC_UUID; others at ['0xed1', '0xed2']
+__const words differing: 0, resolving to the same symbol through the GOT: 0
+-- SignalServiceKit (his-command build)
+differing bytes: 32 {'mach_header+load_commands': 17, '__TEXT,__const': 15}
+__stubs: 1835 stubs, 1835 resolve identically; 0 differ in bytes, of which 0 still resolve to the same target
+__objc_stubs: 994 stubs, 994 resolve identically; 0 differ in bytes, of which 0 still resolve to the same target
+header: 17 differing bytes; 16 in LC_UUID; others at ['0xeda']
+__const words differing: 15, resolving to the same symbol through the GOT: 15
+-- SignalUI (his-command build)
+differing bytes: 18 {'mach_header+load_commands': 18}
+__stubs: 1662 stubs, 1662 resolve identically; 0 differ in bytes, of which 0 still resolve to the same target
+__objc_stubs: 1167 stubs, 1167 resolve identically; 0 differ in bytes, of which 0 still resolve to the same target
+header: 18 differing bytes; 16 in LC_UUID; others at ['0xe39', '0xe3a']
+__const words differing: 0, resolving to the same symbol through the GOT: 0

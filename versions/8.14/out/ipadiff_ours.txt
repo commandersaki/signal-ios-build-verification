@@ -1,0 +1,6 @@
+Different files in $TMPDIR/... and $TMPDIR/...
+    Frameworks/SignalUI.framework/SignalUI
+    Info.plist
+    AppIcon76x76@2x~ipad.png
+    AppIcon60x60@2x.png
+    Frameworks/SignalServiceKit.framework/SignalServiceKit

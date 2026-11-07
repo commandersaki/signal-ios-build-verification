@@ -1,0 +1,20 @@
+{
+ "a": "versions/8.14/signal_dec/Payload/Signal.app/Frameworks/SignalServiceKit.framework/SignalServiceKit",
+ "b": "/Volumes/workspace/build-814.xcarchive/Products/Applications/Signal.app/Frameworks/SignalServiceKit.framework/SignalServiceKit",
+ "a_size_unsigned": 26856488,
+ "b_size_unsigned": 26856488,
+ "identical": false,
+ "differing_bytes": 1025,
+ "by_region": {
+  "mach_header+load_commands": 18,
+  "__TEXT,__stubs": 1,
+  "__TEXT,__objc_stubs": 994,
+  "__TEXT,__const": 12
+ },
+ "first_offset": {
+  "mach_header+load_commands": "0xed9",
+  "__TEXT,__stubs": "0x117cbb1",
+  "__TEXT,__objc_stubs": "0x117d44d",
+  "__TEXT,__const": "0x11b111c"
+ }
+}

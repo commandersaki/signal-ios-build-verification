@@ -1,0 +1,4 @@
+-- AppIcon60x60@2x.png
+120x120 bpp=4: pixels identical=False differing_pixels=1933/14400 max_channel_delta=7
+-- AppIcon76x76@2x~ipad.png
+152x152 bpp=4: pixels identical=False differing_pixels=3060/23104 max_channel_delta=8

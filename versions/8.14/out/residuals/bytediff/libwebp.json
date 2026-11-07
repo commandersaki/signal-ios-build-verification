@@ -1,0 +1,14 @@
+{
+ "a": "versions/8.14/signal_dec/Payload/Signal.app/Frameworks/libwebp.framework/libwebp",
+ "b": "/Volumes/workspace/build-814.xcarchive/Products/Applications/Signal.app/Frameworks/libwebp.framework/libwebp",
+ "a_size_unsigned": 480176,
+ "b_size_unsigned": 480176,
+ "identical": false,
+ "differing_bytes": 2,
+ "by_region": {
+  "mach_header+load_commands": 2
+ },
+ "first_offset": {
+  "mach_header+load_commands": "0x619"
+ }
+}

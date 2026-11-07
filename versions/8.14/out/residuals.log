@@ -1,0 +1,112 @@
+== __TEXT,__text SHA-256 (Apple segedit + shasum)
+blurhash                 2596c75e57e2cd925b2349bc9d4529114de28d03dce0fa141b444384fc6df1dc IDENTICAL 15112
+BonMot                   a1f1be27b09524d8bd1ac46365ed37691b7ee136b75d2c90fcd1b8145cbe79bd IDENTICAL 193552
+CocoaLumberjack          019d977efa6f4be2ec53ea292e38b99c069f0e0a6b3922553b54adae9fa7f6fb IDENTICAL 59220
+GRDB                     06eec8b921c168a16453e4e490140d59c7fccac7e7951e9f20f76365a89eec2e IDENTICAL 1500232
+LibMobileCoin            442e61959a671f1df1779ec77f2caac42a352a54d96e1c0c1511017f16a58e82 IDENTICAL 6606476
+libPhoneNumber_iOS       cd54e8993d13d3a52c65f007ad36cc77fe76ea43a2fa8de96365b85ee0c86146 IDENTICAL 74100
+LibSignalClient          47edeeb452988bfe0e3dfad1b498809f65f54cf42ee4fbf74d6972f6ab35bca0 IDENTICAL 9174880
+libwebp                  f4f73bef985b7a8df85f1358ddcbf60fcb56912fb3f0c5dbdc841f7351dcc04d IDENTICAL 278368
+Logging                  3d2145ec265dbcf1af7f8b925b5b43bb86c2b4119f543e9ebfcb7c277ec0128b IDENTICAL 35536
+Lottie                   85f56d5ac32ae9b8a179b65837d645acc1a3bbb12849b079f8a6b6cdacfa440f IDENTICAL 1380728
+MobileCoin               15bc5ea562bf9eae6096fb4bfcca4f38e99d8dad8531d1d3438d1a9e50cc42f2 IDENTICAL 1922528
+PureLayout               c2a0ae62025d0ecb414f39371980ec7b278c1e838ac432f39ef34549d942195e IDENTICAL 14648
+SDWebImage               33b787be1639bff0704eed26c1e61709ed31c3c9177084b6930c91179be5bc1d IDENTICAL 202380
+SDWebImageWebPCoder      f878ac49c05a0c6ce41104280fc99128801bba6e2b9211906c13798dd8b5563e IDENTICAL 11244
+SignalRingRTC            b8817e5b1c4c6731276c512322e4f10e5d8e32e5646662a1b57aec9586bec82b IDENTICAL 3080316
+SignalServiceKit         c31dc63bc36c76aca14022e26f611e49af6b487f56bb7144f06be69a90d06c38 IDENTICAL 18300452
+SignalUI                 1b318aeec556543289e5b88ec8ee2f14576d610e1dfad9d25e7e9a8411e77f41 IDENTICAL 2928872
+SQLCipher                6b48562a01ae8f8d4d689fd2867a92d8fa323f811a222a89ed5aa04795321723 IDENTICAL 918036
+SwiftProtobuf            37fd60b93961b80dd1f6c8a0f1d51aef5af9027ebd5d74e7105a95df7525c5ef IDENTICAL 893096
+WebRTC                   989612b86355d5e3fc9606da53a2d8c378383085e4fb2211d73f2fa2e06552f3 IDENTICAL 7251568
+SignalNSE                ad56b8be536098058986e863e116e25829c92ba050fd1fe9ec3a49e16b66e7fa IDENTICAL 36448
+SignalShareExtension     29e84d4849029a47bc1107bc213cc1896d68366686ef42d892b7868b00ba2861 IDENTICAL 100776
+Signal                   40edec6e9f5ed2ee2a8cff8fc11f77ce083f6508b42899f8b85f2b3103103f06 IDENTICAL 10528080
+== whole-binary byte diff (signatures removed), by region
+blurhash                 differing_bytes=16     {'mach_header+load_commands': 16}
+BonMot                   differing_bytes=17     {'mach_header+load_commands': 17}
+CocoaLumberjack          differing_bytes=1      {'mach_header+load_commands': 1}
+GRDB                     differing_bytes=17     {'mach_header+load_commands': 17}
+LibMobileCoin            differing_bytes=18     {'mach_header+load_commands': 18}
+libPhoneNumber_iOS       differing_bytes=1      {'mach_header+load_commands': 1}
+LibSignalClient          differing_bytes=18     {'mach_header+load_commands': 18}
+libwebp                  differing_bytes=2      {'mach_header+load_commands': 2}
+Logging                  differing_bytes=18     {'mach_header+load_commands': 18}
+Lottie                   differing_bytes=18     {'mach_header+load_commands': 18}
+MobileCoin               differing_bytes=18     {'mach_header+load_commands': 18}
+PureLayout               differing_bytes=1      {'mach_header+load_commands': 1}
+SDWebImage               differing_bytes=1      {'mach_header+load_commands': 1}
+SDWebImageWebPCoder      differing_bytes=1      {'mach_header+load_commands': 1}
+SignalRingRTC            differing_bytes=18     {'mach_header+load_commands': 18}
+SignalServiceKit         differing_bytes=1025   {'mach_header+load_commands': 18, '__TEXT,__stubs': 1, '__TEXT,__objc_stubs': 994, '__TEXT,__const': 12}
+SignalUI                 differing_bytes=1186   {'mach_header+load_commands': 18, '__TEXT,__stubs': 1, '__TEXT,__objc_stubs': 1167}
+SQLCipher                differing_bytes=2      {'mach_header+load_commands': 2}
+SwiftProtobuf            differing_bytes=17     {'mach_header+load_commands': 17}
+WebRTC                   differing_bytes=2      {'mach_header+load_commands': 2}
+SignalNSE                differing_bytes=2      {'mach_header+load_commands': 2}
+SignalShareExtension     differing_bytes=1      {'mach_header+load_commands': 1}
+Signal                   differing_bytes=2      {'mach_header+load_commands': 2}
+== header bytes: which load-command field
+blurhash                 {'__LINKEDIT.vmsize': 1, 'LC_UUID': 15}
+BonMot                   {'__LINKEDIT.vmsize': 1, 'LC_UUID': 16}
+CocoaLumberjack          {'__LINKEDIT.vmsize': 1}
+GRDB                     {'__LINKEDIT.vmsize': 1, 'LC_UUID': 16}
+LibMobileCoin            {'__LINKEDIT.vmsize': 2, 'LC_UUID': 16}
+libPhoneNumber_iOS       {'__LINKEDIT.vmsize': 1}
+LibSignalClient          {'__LINKEDIT.vmsize': 2, 'LC_UUID': 16}
+libwebp                  {'__LINKEDIT.vmsize': 2}
+Logging                  {'__LINKEDIT.vmsize': 2, 'LC_UUID': 16}
+Lottie                   {'__LINKEDIT.vmsize': 2, 'LC_UUID': 16}
+MobileCoin               {'__LINKEDIT.vmsize': 2, 'LC_UUID': 16}
+PureLayout               {'__LINKEDIT.vmsize': 1}
+SDWebImage               {'__LINKEDIT.vmsize': 1}
+SDWebImageWebPCoder      {'__LINKEDIT.vmsize': 1}
+Signal                   {'__LINKEDIT.vmsize': 2}
+SignalNSE                {'__LINKEDIT.vmsize': 2}
+SignalRingRTC            {'__LINKEDIT.vmsize': 2, 'LC_UUID': 16}
+SignalServiceKit         {'__LINKEDIT.vmsize': 2, 'LC_UUID': 16}
+SignalShareExtension     {'__LINKEDIT.vmsize': 1}
+SignalUI                 {'__LINKEDIT.vmsize': 2, 'LC_UUID': 16}
+SQLCipher                {'__LINKEDIT.vmsize': 2}
+SwiftProtobuf            {'__LINKEDIT.vmsize': 1, 'LC_UUID': 16}
+WebRTC                   {'__LINKEDIT.vmsize': 2}
+== stubs and __const: do differing bytes still resolve to the same targets?
+-- SignalServiceKit
+__stubs: 1835 stubs, 1835 resolve identically; 1 differ in bytes, of which 1 still resolve to the same target
+__objc_stubs: 994 stubs, 994 resolve identically; 994 differ in bytes, of which 994 still resolve to the same target
+header: 18 differing bytes; 16 in LC_UUID; others at ['0xed9', '0xeda']
+__const words differing: 12, resolving to the same symbol through the GOT: 12
+-- SignalUI
+__stubs: 1662 stubs, 1662 resolve identically; 1 differ in bytes, of which 1 still resolve to the same target
+__objc_stubs: 1167 stubs, 1167 resolve identically; 1167 differ in bytes, of which 1167 still resolve to the same target
+header: 18 differing bytes; 16 in LC_UUID; others at ['0xe39', '0xe3a']
+__const words differing: 0, resolving to the same symbol through the GOT: 0
+== plists: differing keys
+plists differing: 26
+  52 BuildMachineOSBuild
+   6 CFBundleVersion
+   2 Timestamp
+   2 DateTime
+   1 DTAppStoreToolsBuild
+== loose PNGs that differ: decoded pixels
+-- AppIcon60x60@2x.png
+120x120 bpp=4: pixels identical=False differing_pixels=1933/14400 max_channel_delta=7
+-- AppIcon76x76@2x~ipad.png
+152x152 bpp=4: pixels identical=False differing_pixels=3060/23104 max_channel_delta=8
+== asset catalogs: renditions
+PlugIns/SignalShareExtension.appex/Assets.car: renditions ref=2378 cand=2378; same identity=2378; identical=2370; digest differs=8; ref-only=0; cand-only=0
+   packed atlas (raster): 2 ['ZZZZPackedAsset-1.0.0-gamut1', 'ZZZZPackedAsset-2.0.0-gamut0']
+   raster of identical vector source: 6 ['official_wallpaper_reduced', 'safetytip_240_01', 'safetytip_240_05', 'verificationcode_alert_96']
+   ref-only renditions without a same-name/type/idiom/scale/size counterpart: 0
+   cand-only renditions without a counterpart: 0 []
+PlugIns/SignalNSE.appex/Assets.car: renditions ref=8 cand=8; same identity=8; identical=8; digest differs=0; ref-only=0; cand-only=0
+   ref-only renditions without a same-name/type/idiom/scale/size counterpart: 0
+   cand-only renditions without a counterpart: 0 []
+Assets.car: renditions ref=2740 cand=2764; same identity=2668; identical=2659; digest differs=9; ref-only=72; cand-only=96
+   packed atlas (raster): 2 ['ZZZZPackedAsset-1.0.0-gamut1', 'ZZZZPackedAsset-2.0.0-gamut0']
+   raster of identical vector source: 7 ['clock-arabic', 'official_wallpaper_reduced', 'safetytip_240_01', 'safetytip_240_05', 'verificationcode_alert_96']
+   ref-only renditions without a same-name/type/idiom/scale/size counterpart: 0
+   cand-only renditions without a counterpart: 24 [('AppIcon', 'Icon Image', 'pad', 1, 1024), ('AppIcon', 'Icon Image', 'phone', 1, 1024), ('AppIcon-bubbles', 'Icon Image', 'pad', 1, 1024), ('AppIcon-bubbles', 'Icon Image', 'phone', 1, 1024)] ...
+== reference app vs its own code signatures
+23 signed Mach-O binaries, 25753 code-signature pages: 6178 match as-is; 19552 differ inside FairPlay-encrypted ranges (expected: those pages are now decrypted); 23 differ outside them; after restoring cryptid=1, 0 still differ outside them
+done: verify/out/v8.14/residuals
