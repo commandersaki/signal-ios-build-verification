@@ -1,0 +1,9 @@
+PlugIns/SignalShareExtension.appex/Assets.car: renditions ref=2542 cand=2542; same identity=2542; identical=2542; digest differs=0; ref-only=0; cand-only=0
+   ref-only renditions without a same-name/type/idiom/scale/size counterpart: 0
+   cand-only renditions without a counterpart: 0 []
+PlugIns/SignalNSE.appex/Assets.car: renditions ref=8 cand=8; same identity=8; identical=8; digest differs=0; ref-only=0; cand-only=0
+   ref-only renditions without a same-name/type/idiom/scale/size counterpart: 0
+   cand-only renditions without a counterpart: 0 []
+Assets.car: renditions ref=2904 cand=2904; same identity=2832; identical=2832; digest differs=0; ref-only=72; cand-only=72
+   ref-only renditions without a same-name/type/idiom/scale/size counterpart: 0
+   cand-only renditions without a counterpart: 0 []

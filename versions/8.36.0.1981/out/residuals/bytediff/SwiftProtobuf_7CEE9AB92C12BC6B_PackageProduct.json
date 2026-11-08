@@ -1,0 +1,14 @@
+{
+ "a": "$TMPDIR/...",
+ "b": "/Volumes/workspace/build-836.xcarchive/Products/Applications/Signal.app/Frameworks/SwiftProtobuf_7CEE9AB92C12BC6B_PackageProduct.framework/SwiftProtobuf_7CEE9AB92C12BC6B_PackageProduct",
+ "a_size_unsigned": 1479952,
+ "b_size_unsigned": 1479952,
+ "identical": false,
+ "differing_bytes": 1,
+ "by_region": {
+  "mach_header+load_commands": 1
+ },
+ "first_offset": {
+  "mach_header+load_commands": "0xc59"
+ }
+}

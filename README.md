@@ -17,6 +17,7 @@ This shows the shipped apps are built from the public source. It does **not** sh
 | 8.35.1 (1964) | `__text` byte-identical in all first-party binaries; bundled frameworks match their pins; two planted-backdoor controls detected | [`report/report.pdf`](report/report.pdf) | [`versions/8.35.1.1964/`](versions/8.35.1.1964/) |
 | 8.14 (1637) | `__text` byte-identical in all 23 binaries; explains why [BarbossHack's check](https://community.signalusers.org/t/add-reproducible-builds-to-the-ios-app/20516/17) flagged it | [`versions/8.14.0.1637/report.pdf`](versions/8.14.0.1637/report.pdf) | [`versions/8.14.0.1637/`](versions/8.14.0.1637/) |
 | 8.15 (1655) | `__text` byte-identical in all 23 binaries | [`versions/8.15.0.1655/report.pdf`](versions/8.15.0.1655/report.pdf) | [`versions/8.15.0.1655/`](versions/8.15.0.1655/) |
+| 8.36 (1981) | `__text` byte-identical in all 21 binaries | [`versions/8.36.0.1981/report.pdf`](versions/8.36.0.1981/report.pdf) | [`versions/8.36.0.1981/`](versions/8.36.0.1981/) |
 
 Each `versions/<tag>/` folder holds that version's decrypted app (`signal_dec/`) and outputs (`out/`), and its report where there is one. The 8.35.1 report stays at `report/report.pdf`, its original path. Decrypted IPAs are attached to a [release](https://github.com/commandersaki/signal-ios-build-verification/releases) per version.
 
@@ -25,7 +26,7 @@ Each `versions/<tag>/` folder holds that version's decrypted app (`signal_dec/`)
 
 ## Reproducing
 
-You need a Mac with the Xcode build recorded in the app's `Info.plist` (`DTXcodeBuild`). For 8.35.1 that's Xcode 27.1 (27A9275), and for 8.14 and 8.15 it's 26.5 (17F42). To check the decrypted app independently, decrypt your own copy, for example with [unfairplay](https://github.com/DrWhax/unfairplay), and compare the per-binary hashes in `versions/<tag>/out/provenance_ipa.txt`. Section 10 of the 8.35.1 report has the full build commands. In short:
+You need a Mac with the Xcode build recorded in the app's `Info.plist` (`DTXcodeBuild`). For 8.35.1 and 8.36 that's Xcode 27.1 (27A9275), and for 8.14 and 8.15 it's 26.5 (17F42). To check the decrypted app independently, decrypt your own copy, for example with [unfairplay](https://github.com/DrWhax/unfairplay), and compare the per-binary hashes in `versions/<tag>/out/provenance_ipa.txt`. Section 10 of the 8.35.1 report has the full build commands. In short:
 
 ```sh
 # build the tag at /Volumes/workspace/repository (see report §10), then:

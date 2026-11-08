@@ -1,0 +1,5 @@
+-- SignalServiceKit
+__stubs: 1873 stubs, 1873 resolve identically; 1 differ in bytes, of which 1 still resolve to the same target
+__objc_stubs: 999 stubs, 999 resolve identically; 999 differ in bytes, of which 999 still resolve to the same target
+header: 18 differing bytes; 16 in LC_UUID; others at ['0xf29', '0xf2a']
+__const words differing: 0, resolving to the same symbol through the GOT: 0

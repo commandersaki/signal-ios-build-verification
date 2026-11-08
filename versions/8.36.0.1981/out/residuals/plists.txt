@@ -1,0 +1,211 @@
+-- libPhoneNumber_libPhoneNumber.bundle/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "26A434"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- SQLCipher_SQLCipher.bundle/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "26A434"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- PlugIns/SignalShareExtension.appex/libPhoneNumber_libPhoneNumber.bundle/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "26A434"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- PlugIns/SignalShareExtension.appex/SQLCipher_SQLCipher.bundle/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "26A434"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- PlugIns/SignalShareExtension.appex/SDWebImage_SDWebImage.bundle/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "26A434"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- PlugIns/SignalShareExtension.appex/SwiftProtobuf_SwiftProtobuf.bundle/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "26A434"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- PlugIns/SignalShareExtension.appex/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "26A434"
+---
+>   "BuildMachineOSBuild" => "25G229"
+14c14
+<   "CFBundleVersion" => "1981"
+---
+>   "CFBundleVersion" => "0"
+-- PlugIns/SignalNSE.appex/libPhoneNumber_libPhoneNumber.bundle/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "26A434"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- PlugIns/SignalNSE.appex/SQLCipher_SQLCipher.bundle/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "26A434"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- PlugIns/SignalNSE.appex/SDWebImage_SDWebImage.bundle/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "26A434"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- PlugIns/SignalNSE.appex/SwiftProtobuf_SwiftProtobuf.bundle/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "26A434"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- PlugIns/SignalNSE.appex/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "26A434"
+---
+>   "BuildMachineOSBuild" => "25G229"
+14c14
+<   "CFBundleVersion" => "1981"
+---
+>   "CFBundleVersion" => "0"
+-- SDWebImage_SDWebImage.bundle/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "26A434"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- SwiftProtobuf_SwiftProtobuf.bundle/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "26A434"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Lottie_Lottie.bundle/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "26A434"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/SignalServiceKit.framework/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "26A434"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/Lottie_19F76E9844E937_PackageProduct.framework/Lottie_Lottie.bundle/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "26A434"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/Lottie_19F76E9844E937_PackageProduct.framework/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "26A434"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/libPhoneNumber_32788E2F62C8D1A8_PackageProduct.framework/libPhoneNumber_libPhoneNumber.bundle/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "26A434"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/libPhoneNumber_32788E2F62C8D1A8_PackageProduct.framework/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "26A434"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/SDWebImageWebPCoder_2F1A86FD5050ED06_PackageProduct.framework/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "26A434"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/BonMot_1760A186445495_PackageProduct.framework/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "26A434"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/PureLayout_7B4592321BA5AA24_PackageProduct.framework/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "26A434"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/SDWebImage_-382901E92613C85E_PackageProduct.framework/SDWebImage_SDWebImage.bundle/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "26A434"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/SDWebImage_-382901E92613C85E_PackageProduct.framework/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "26A434"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/SignalRingRTC.framework/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "26A434"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/MobileCoinCore_50FF61D552B47778_PackageProduct.framework/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "26A434"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/LibSignalClient_-379C53AEA1C291D_PackageProduct.framework/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "26A434"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/SwiftProtobuf_7CEE9AB92C12BC6B_PackageProduct.framework/SwiftProtobuf_SwiftProtobuf.bundle/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "26A434"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/SwiftProtobuf_7CEE9AB92C12BC6B_PackageProduct.framework/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "26A434"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/Logging_35C93DA702091ECE_PackageProduct.framework/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "26A434"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/libwebp_4647D9071D10D7EC_PackageProduct.framework/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "26A434"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/CocoaLumberjack_-500FEF4A7B3EDA0C_PackageProduct.framework/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "26A434"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/GRDB_5DC4DB053_PackageProduct.framework/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "26A434"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/SignalUI.framework/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "26A434"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/SQLCipher_6ABC871F80100B54_PackageProduct.framework/SQLCipher_SQLCipher.bundle/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "26A434"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Frameworks/SQLCipher_6ABC871F80100B54_PackageProduct.framework/Info.plist
+2c2
+<   "BuildMachineOSBuild" => "26A434"
+---
+>   "BuildMachineOSBuild" => "25G229"
+-- Info.plist
+10c10
+<     "DateTime" => "Fri Nov  6 21:59:38 UTC 2026"
+---
+>     "DateTime" => "Sun  8 Nov 2026 03:30:33 UTC"
+12c12
+<     "Timestamp" => 1794002378
+---
+>     "Timestamp" => 1794108633
+15c15
+<   "BuildMachineOSBuild" => "26A434"
+---
+>   "BuildMachineOSBuild" => "25G229"
+124,125c124
+<   "CFBundleVersion" => "1981"
+<   "DTAppStoreToolsBuild" => "27B52"
+---
+>   "CFBundleVersion" => "0"
