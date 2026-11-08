@@ -151,7 +151,7 @@ The binaries flagged change from build to build while the compiled code stays id
 
 = Limitations
 - *The public source itself is not reviewed.* This shows the App Store binary corresponds to tag `8.14.0.1637`. It does not show that the source is free of backdoors.
-- *Prebuilt libraries are only checked against their pins.* libsignal's Rust library, RingRTC, WebRTC and LibMobileCoin are fetched prebuilt at checksum- or tag-pinned versions. This report shows the shipped binaries equal those pinned artifacts linked as the tag specifies. It does not rebuild them from their own source.
+- *Prebuilt libraries: only libmobilecoin rebuilt.* This version's libmobilecoin (`signal/6.0.2`) is the same artifact that was rebuilt from source and matched byte for byte for 8.35.1 and 8.36 (#link("https://github.com/commandersaki/signal-ios-build-verification/blob/main/report/report.pdf")[8.35.1 report], section "Prebuilt native libraries rebuilt from source"). Its other prebuilt libraries, libsignal (`v0.94.1`), RingRTC (`v2.69.1`) and WebRTC (`7778b`), were checked against their pins only, not rebuilt. For the later versions 8.35.1 and 8.36, every prebuilt library reproduced exactly from public source with the projects' own recipes. That doesn't prove the same for these earlier builds, but it is a positive indicator that they too were built from their public source.
 - *Some causes are explained but not proven.* The UUID and asset-rasterisation differences are attributed to build-environment details that were not reproduced (for the assets, the Simulator runtime has been ruled out; see @assets). Two local builds of 8.14 produced different GOT slot orders, so that ordering varies between builds. Those two builds used different `xcodebuild` commands, though; the same-command test was done for 8.35.1. None of these differences touches compiled code, which is identical.
 - *One version.* The result is for 8.14 (1637), and separately for 8.35.1 (1964). It says nothing about other releases.
 
@@ -177,4 +177,5 @@ verify/explain_residuals.sh $APP $BUILT versions/8.14.0.1637/out/residuals
   table.header([Date], [Change]),
   [7 November 2026], [First published version, at `versions/8.14/`.],
   [7 November 2026], [*Moved* to `versions/8.14.0.1637/`; paths updated. *Changed* the cause given for the asset-rasterisation differences (@assets): it previously named the macOS version as the likely cause. A test on 8.15 ruled out the Simulator runtime; the GPU or the host macOS remain. *Added* this changelog.],
+  [8 November 2026], [*Changed* the prebuilt-libraries limitation: libmobilecoin is now verified (the same artifact was rebuilt from source for 8.35.1 and 8.36); libsignal, RingRTC and WebRTC for this version are not, though later versions reproducing exactly is a positive indicator.],
 )

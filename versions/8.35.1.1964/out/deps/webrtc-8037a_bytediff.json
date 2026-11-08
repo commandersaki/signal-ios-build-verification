@@ -1,0 +1,14 @@
+{
+ "a": "~/Library/Caches/org.signal.ringrtc/prebuild-2.73.0/release/WebRTC.xcframework/ios-arm64/WebRTC.framework/WebRTC",
+ "b": "/Users/runner/work/ringrtc/ringrtc/out/release/WebRTC.xcframework/ios-arm64/WebRTC.framework/WebRTC",
+ "a_size_unsigned": 8671104,
+ "b_size_unsigned": 8671104,
+ "identical": false,
+ "differing_bytes": 8,
+ "by_region": {
+  "mach_header+load_commands": 8
+ },
+ "first_offset": {
+  "mach_header+load_commands": "0x4cc3"
+ }
+}

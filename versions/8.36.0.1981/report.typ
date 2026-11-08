@@ -30,6 +30,8 @@
 
 #note[
   *Result.* The compiled code (`__TEXT,__text`) of all 21 binaries in the App Store app is *byte-identical* to a local build of tag `8.36.0.1981` with Xcode 27.1 (27A9275). That covers Signal's five own binaries and all 16 bundled frameworks. Every other difference is one already explained for earlier versions: the signature-size field in every binary; the UUID and the linker's GOT-slot order in `SignalServiceKit` alone, with every stub resolving to the same target; build metadata in plists; and the app icons, which are rasterised at build time and differ by at most 1/255.
+
+  Its four prebuilt native libraries (libsignal, RingRTC, WebRTC, libmobilecoin) were also rebuilt from their own public source and match, so 8.36 is *fully reproducible from public source*. That covers not just the Signal-iOS repository but every library it bundles.
 ]
 
 = Method
@@ -59,12 +61,16 @@ This is the same method as for #link("https://github.com/commandersaki/signal-io
   [Plists], [38 differ, only in `BuildDetails` time, `BuildMachineOSBuild`, `CFBundleVersion` and `DTAppStoreToolsBuild`],
   [Asset catalogs], [All renditions identical (2,832 main, 2,542 share extension, 8 NSE), except the 72 rasterised app-icon bitmaps, which `actool` renames randomly and which differ slightly in content],
   [Loose icons], [107 of 14,400 and 176 of 23,104 pixels differ, by at most 1/255 in one channel],
+  [Prebuilt native libraries], [All four rebuilt from their own public source and matched: libsignal `v0.106.1` byte-identical (803 of 803 members, SHA-256 `b7f79b9f…`, the device slice of the pinned XCFramework `60baf6a3…`); RingRTC `v2.73.0`, WebRTC `8037a` and libmobilecoin `6.0.2` are the same builds verified for 8.35.1 (byte-identical, WebRTC apart from its 8-byte UUID). See below.],
 )
+
+= Prebuilt native libraries
+libsignal `v0.106.1` was built from tag `v0.106.1` exactly as Signal's public CI run of 27 October 2026 did: `swift/build_ffi.sh --release` for `aarch64-apple-ios`, with Rust 1.98.1 and Xcode 16.4 at the runner's paths. That CI run's log shows the pinned checksum `60baf6a3…`. The library is byte-identical to the `ios-arm64` slice of that XCFramework, which 8.36 now fetches through Swift Package Manager. The other three prebuilt libraries are unchanged from 8.35.1 and were rebuilt for that version (#link("https://github.com/commandersaki/signal-ios-build-verification/blob/main/report/report.pdf")[8.35.1 report], section "Prebuilt native libraries rebuilt from source"). libmobilecoin now arrives as `libmobilecoin-ios-build-v6.0.2.zip` from `build-artifacts.signal.org` instead of a git repository, but its `libmobilecoin.a` is the identical file (`ebfa6710…`). With the app's own code also byte-identical, every compiled byte in 8.36 traces back to public source: the equivalent of a source-reproducible build. Scripts: `verify/deps/`; outputs: `out/deps/`.
 
 = Limitations
 As for earlier versions:
 - The public source itself is not reviewed.
-- Prebuilt dependencies (libsignal's Rust library, RingRTC, WebRTC, LibMobileCoin) are checked against their pinned versions, not rebuilt from their own source.
+- The toolchains are trusted: Apple's Xcode compilers, the Rust toolchains from rustup and Chromium's prebuilt clang. A compromised compiler would reproduce its own output.
 - The causes of the UUID and icon-rasterisation differences are inferred, not proven.
 
 = Reproducing
@@ -76,3 +82,11 @@ verify/compare_build.sh signal-ios-8.36-1981.decrypted.ipa <built Signal.app> ve
 verify/explain_residuals.sh signal-ios-8.36-1981.decrypted.ipa <built Signal.app> versions/8.36.0.1981/out/residuals
 ```
 The decrypted IPA is attached to the #link("https://github.com/commandersaki/signal-ios-build-verification/releases/tag/signal-8.36")[`signal-8.36` release]. The app is also in `versions/8.36.0.1981/signal_dec/`, and all outputs are in `versions/8.36.0.1981/out/`.
+
+= Changelog
+#table(
+  columns: (auto, 1fr),
+  table.header([Date], [Change]),
+  [8 November 2026], [First published version.],
+  [8 November 2026], [*Added* the prebuilt native libraries: all four rebuilt from source and matched (libsignal `v0.106.1` here; the rest shared with 8.35.1). *Changed* the limitation that said they were only checked against their pins. *Added* this changelog.],
+)

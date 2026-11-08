@@ -1,0 +1,15 @@
+{
+ "ref": "verify_work/libsignal/prebuilt-v0.106.1/LibSignalFfi.xcframework/ios-arm64/libsignal_ffi.a",
+ "cand": "/Users/runner/work/libsignal/libsignal/target/aarch64-apple-ios/release/libsignal_ffi.a",
+ "ref_members": 803,
+ "cand_members": 803,
+ "only_ref": [],
+ "only_cand": [],
+ "identical": 803,
+ "differ": {},
+ "by_kind": {
+  "macho identical": 803
+ },
+ "symdef_identical": true,
+ "whole_file_identical": true
+}

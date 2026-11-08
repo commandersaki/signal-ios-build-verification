@@ -1,0 +1,15 @@
+{
+ "ref": "<Signal-iOS DerivedData>/SourcePackages/artifacts/mobilecoin-swift/LibMobileCoin/LibMobileCoin.xcframework/ios-arm64/libmobilecoin.a",
+ "cand": "/Users/signal/work/libmobilecoin-ios-artifacts/libmobilecoin/target/aarch64-apple-ios/mobile-release/libmobilecoin.a",
+ "ref_members": 602,
+ "cand_members": 602,
+ "only_ref": [],
+ "only_cand": [],
+ "identical": 602,
+ "differ": {},
+ "by_kind": {
+  "macho identical": 602
+ },
+ "symdef_identical": true,
+ "whole_file_identical": true
+}

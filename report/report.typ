@@ -35,7 +35,9 @@
 #note[
   *Summary.* The App Store build of Signal iOS 8.35.1 (1964) was decrypted. Then the public source at tag `8.35.1.1964` (commit `4f019b8`) was built with the same Xcode (27.1, build 27A9275). For all five binaries compiled from Signal's own source (`Signal`, `SignalServiceKit`, `SignalUI`, `SignalNSE`, `SignalShareExtension`), *the compiled code section (`__TEXT,__text`) is byte-identical to the shipped app*. Every other differing byte in those binaries was traced to a specific harmless cause. With the code signature removed, the shipped main executable differs from a local build by *one byte*, the signature-size field. 18 of the 19 bundled third-party frameworks are identical apart from that same field. The remaining one, WebRTC, matches once the App Store's architecture thinning is accounted for. Two planted-backdoor builds were both detected, including a one-line change that adds no strings or symbols.
 
-  This shows that the shipped binary is what the public source produces. It does not show that the public source itself is trustworthy (see @limits).
+  *Update (8 November 2026):* the prebuilt native libraries the app bundles were then rebuilt from their own public source: libsignal (`v0.105.0`), RingRTC (`v2.73.0`), WebRTC (`8037a`) and libmobilecoin (`6.0.2`). All four match the shipped prebuilds: byte-identical, apart from WebRTC's 8-byte build UUID (@deps).
+
+  This shows that the shipped app is *fully reproducible from public source*. That covers not just the Signal-iOS repository but every prebuilt native library the app bundles, each rebuilt from its own public repository with that project's own recipe. Every compiled byte traces back to public source. The only differences are the code signature, build UUIDs and linker GOT-slot order, all explained in @bytes and @deps. It does not show that the public source itself is trustworthy (see @limits).
 ]
 
 #outline(depth: 1, indent: 1em)
@@ -175,7 +177,7 @@ All scripts are in `verify/`, use only the Python standard library and Apple's c
 )
 "Feature layers" covers, for example in `Signal`: 16,273 C strings, 1,060 ObjC class names, 5,746 selectors, 9,695 Swift field names, 8,209 imports and 100 linked libraries. Every one of these is identical in both builds, with no additions and no removals.
 
-== Accounting for every differing byte
+== Accounting for every differing byte <bytes>
 With signatures removed, every pair of binaries has exactly the same size. The bytes that still differ are:
 
 #table(columns: (auto, auto, 1fr),
@@ -192,7 +194,25 @@ With signatures removed, every pair of binaries has exactly the same size. The b
   [LibSignalClient, SignalRingRTC, SQLCipher, MobileCoin, LibMobileCoin, GRDB, SwiftProtobuf, CocoaLumberjack, Logging, BonMot, Lottie, PureLayout, SDWebImage, SDWebImageWebPCoder, libPhoneNumber, libwebp], [#ok identical except the signature-size byte (1–2 bytes)],
   [WebRTC], [#ok identical except the signature-size byte, after `lipo -thin arm64`. Signal's prebuilt is a single-architecture "fat" binary, which App Store thinning unwraps. Both have UUID `4C4C44B7-5555-3144-A187-CBA7B54C9452`, matching the RingRTC prebuild Signal published],
 )]
-LibSignalClient (the Signal Protocol implementation), RingRTC/WebRTC and MobileCoin come as *prebuilt binaries* pinned by checksum. This shows the App Store app contains exactly those published prebuilds. It does not show the prebuilds come from their own source (@limits).
+LibSignalClient (the Signal Protocol implementation), RingRTC/WebRTC and MobileCoin come as *prebuilt binaries* pinned by checksum. This shows the App Store app contains exactly those published prebuilds. @deps rebuilds the prebuilds themselves from their own source.
+
+== Prebuilt native libraries rebuilt from source <deps>
+Four native libraries reach the app as prebuilt binaries, not compiled during the app build. Each was rebuilt from its own public source and compared with the prebuild, member by member for static libraries (`verify/ar_compare.py`) and section by section for WebRTC. The recipe for each was recovered from the project's CI workflow and logs, or from the toolchain versions and paths recorded inside the prebuild. Where a library records absolute paths (in debug information), the build used those same paths. The scripts are in `verify/deps/`, and the outputs are in `versions/8.35.1.1964/out/deps/`.
+
+#table(
+  columns: (auto, 1fr, auto),
+  table.header([Library], [Source and recipe], [Result]),
+  [libsignal \ `libsignal_ffi.a` \ `v0.105.0`], [Tag `v0.105.0` of `signalapp/libsignal`. Signal's public CI run (7 Oct 2026) shows it built the pinned archive (`556a8241…`), with Rust 1.98.1, Xcode 16.4 and `swift/build_ffi.sh --release`. Rebuilt the same way at the runner's paths (`/Users/runner/work/libsignal/libsignal`, `/Applications/Xcode_16.4.app`).], [#ok byte-identical \ (803 of 803 members, SHA-256 `296840c5…`)],
+  [RingRTC \ `libringrtc.a` \ `v2.73.0`], [Tag `v2.73.0` of `signalapp/ringrtc`; `cargo rustc --crate-type staticlib` as `bin/build-ios` runs it, with Rust 1.97.1 and Xcode 26.2 (both recorded in the prebuild), and `WEBRTC_VERSION=8037a` from `config/version.properties` (compiled into the library).], [#ok byte-identical \ (579 of 579 members, `f9614059…`)],
+  [WebRTC \ `WebRTC.framework` \ `8037a`], [Tag `8037a` (`e47f2d8`) of Signal's fork `signalapp/webrtc`, synced by `gclient` with every dependency pinned by its `DEPS` file, and built by RingRTC v2.73.0's `bin/build-ios --webrtc-only` with Chromium's pinned clang and the Xcode 26.1.1 SDK (both recorded in the prebuild's `build_env.txt`).], [#ok identical except the 8-byte `LC_UUID` \ (`__text` byte-identical, 7,439,384 bytes)],
+  [libmobilecoin \ `libmobilecoin.a` \ `6.0.2`], [Tag `signal/6.0.2` of `signalapp/libmobilecoin-ios-artifacts` (MobileCoin `v6.0.2`, `fe8017c`). Built on a developer's Mac, not CI: the prebuild records Rust `nightly-2023-10-01`, Xcode 14.2 at `/Applications/Xcode.app`, and source and Cargo paths under `/Users/signal`. Rebuilt with those, plus CMake 3.29.3 patched by the repository's `tools/patch-cmake.sh`.], [#ok byte-identical \ (602 of 602 members, `ebfa6710…`)],
+)
+
+Notes on the recipes:
+- *WebRTC's UUID.* The linker derives it from build inputs that are then stripped (the framework's debug symbols are deleted). Every other byte of the 8.67 MB binary matches. The same kind of difference appears in the app's own binaries (@bytes).
+- *WebRTC's build script.* The prebuild's `build_env.txt` names an unpublished RingRTC commit (`c92b159`, on a branch for WebRTC m154) as the build script. RingRTC's public v2.73.0 scripts produced the same code, so that commit made no difference to the output.
+- *libmobilecoin's CMake.* The exact CMake version on the developer's machine isn't recorded. CMake 3.29.3, current when the artifact was committed (June 2024), reproduced every object exactly, including the mbedTLS objects built through CMake.
+- *Shared with 8.36.* Signal 8.36 uses the same RingRTC, WebRTC and libmobilecoin builds, so these results cover it too. 8.36's newer libsignal (`v0.106.1`) was rebuilt separately and is also byte-identical.
 
 == Non-code files
 - *Plists (33 differ):* `BuildMachineOSBuild` (Xcode Cloud `26A434` vs local `25G229`), `CFBundleVersion` (`1964` vs `0`; Xcode Cloud sets it at export), `BuildDetails` date and timestamp, and `DTAppStoreToolsBuild` (added by App Store processing). No other keys differ.
@@ -231,7 +251,7 @@ The two reach a comparable standard by different routes. Android's procedure is 
 // ---------- 7 ----------
 = Limitations <limits>
 + *Trust in the source is a separate question.* This work shows the App Store binary equals what the public source produces. A backdoor *committed to the public repository* would reproduce exactly and pass every check here. Ruling that out needs a source review, focusing on code paths that handle keys, plaintext and networking.
-+ *Prebuilt dependencies are checked against their published binaries, not their source.* LibSignalClient (`v0.105.0`), RingRTC (`v2.73.0`) and WebRTC (`8037a`) are downloaded prebuilt and checked against the checksums in the `Podfile`. Rebuilding them from Rust/C++ source and comparing would close this gap, and is a larger separate task.
++ *Prebuilt dependencies.* These were first only checked against their published checksums. They have since been rebuilt from their own source and match (@deps). What remains trusted is the toolchain: Apple's Xcode compilers, the Rust toolchains from rustup, and Chromium's prebuilt clang. A compromised compiler would reproduce its own output. Ruling that out ("trusting trust") is beyond this work.
 + *Private Pods repository.* `Scripts/setup_private_pods` can switch the build to `Signal-Pods-Private`. Whether Signal's release builds do so is an Xcode Cloud setting that can't be inspected. For this release it makes no difference: every framework built from Pods matched the public Pods exactly.
 + *One release, one copy.* The result covers 8.35.1 (1964), this downloaded copy and one device class (App Store thinning). Other versions, other thinned variants, or another user's download were not checked.
 + *Outside the IPA.* What iOS does at install or run time, and code loaded at run time (if any), are outside what a static comparison can see. Server-side behaviour is out of scope.
@@ -246,7 +266,7 @@ I'm Claude, the model that did this analysis and wrote this report, and I want t
 *Supported by the evidence:*
 - The compiled code shipped in Signal iOS 8.35.1 (1964) for Signal's own five binaries is *byte-for-byte* the code produced by compiling the public tag `8.35.1.1964` with Xcode 27.1 (27A9275).
 - Nothing was added, removed or altered in those binaries apart from a code signature, its size field, and a linker GOT-slot ordering that varies between identical builds.
-- The bundled third-party frameworks are exactly the versions the public repository pins.
+- The bundled third-party frameworks are exactly the versions the public repository pins. The four that arrive as prebuilt binaries (libsignal, RingRTC, WebRTC, libmobilecoin) were also rebuilt from their own public source and match, so no part of the app's compiled code is an unexplained binary.
 - The harness is capable of catching a hidden change: a single-line key weakening, with no new strings or symbols, was detected and traced to the function that contains it.
 
 *Therefore,* for this release, a backdoor *added by Signal (or anyone in its build pipeline) after the public source* is ruled out to a very high degree of confidence. The App Store app runs the code in the public repository.
@@ -293,7 +313,9 @@ python3 -I verify/summarise.py verify/out/ipa_vs_A
 python3 -I verify/bytediff.py <ipa binary> <built binary> out.json
 python3 -I verify/validate_decryption.py signal.ipa signal.decrypted.ipa out.json signal_dec/Payload/Signal.app
 ```
-Outputs: `verify/out/ipa_vs_A/` (main comparison and byte accounting), `verify/out/controls/` (identity, tamper, built-twice, planted C and D), `verify/out/decryption_validation.json`, `verify/out/provenance_ipa.txt`. Controls: `verify/controls/*.patch`.
+Outputs (moved from `verify/out/` to `versions/8.35.1.1964/out/`, with the decrypted app in `versions/8.35.1.1964/signal_dec/`): `ipa_vs_A/` (main comparison and byte accounting), `controls/` (identity, tamper, built-twice, planted C and D), `decryption_validation.json`, `provenance_ipa.txt`, and `deps/` (prebuilt-library rebuilds). Controls: `verify/controls/*.patch`.
+
+Prebuilt libraries (@deps): `verify/deps/build_libsignal.sh v0.105.0`, `build_ringrtc.sh v2.73.0`, `build_webrtc.sh` and `build_libmobilecoin.sh signal/6.0.2`, each followed by `verify/ar_compare.py <prebuilt.a> <built.a>`. Each script lists its prerequisites (Xcode version and path, and the `/Users/runner` or `/Users/signal` directory).
 
 // ---------- changelog ----------
 = Changelog
@@ -302,4 +324,5 @@ Outputs: `verify/out/ipa_vs_A/` (main comparison and byte accounting), `verify/o
   table.header([*Date*], [*Change*]),
   [7 November 2026], [First published version.],
   [7 November 2026], [*Added* to @layers: what was expected at the outset (no bit-for-bit match, hence the function layer), and what happened (the right build parameters produced byte-identical code, making the raw-byte comparison the primary evidence). *Added* this changelog. Nothing deleted.],
+  [8 November 2026], [*Added* @deps: the four prebuilt native libraries (libsignal, RingRTC, WebRTC, libmobilecoin) rebuilt from source and matched; an update note in the summary; a conclusion bullet; dependency scripts in Reproducing. *Changed* the prebuilt-dependencies limitation, which previously said they were checked only against checksums, and the sentence in the third-party section that pointed to it. *Changed* the output paths in Reproducing, which moved to `versions/8.35.1.1964/out/`.],
 )

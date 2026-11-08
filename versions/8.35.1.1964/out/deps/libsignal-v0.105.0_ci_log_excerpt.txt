@@ -1,0 +1,11 @@
+2026-10-07T01:13:25.0969540Z Version: 20260828.587
+2026-10-07T01:13:25.0974410Z Image: macos-15-arm64
+2026-10-07T01:13:25.0974740Z Version: 20260907.0337.1
+2026-10-07T01:13:41.2391830Z   1.98.1-aarch64-apple-darwin installed - rustc 1.98.1 (48a229cea 2026-09-01)
+2026-10-07T01:13:44.4115980Z ##[group]Run swift/build_ffi.sh --release
+2026-10-07T01:18:38.6105280Z     Finished `release` profile [optimized + debuginfo] target(s) in 4m 21s
+2026-10-07T01:18:42.3776230Z ##[group]Run swift/build_ffi.sh --release
+2026-10-07T01:22:44.5854860Z     Finished `release` profile [optimized + debuginfo] target(s) in 4m 01s
+2026-10-07T01:22:47.9127260Z ##[group]Run swift/build_ffi.sh --release
+2026-10-07T01:26:48.3949160Z     Finished `release` profile [optimized + debuginfo] target(s) in 3m 59s
+2026-10-07T01:27:08.0804810Z 556a82414b545490085a0e21d94990788bdcbee4d769043f7889397872443faf  libsignal-client-ios-build-v0.105.0.tar.gz

@@ -65,7 +65,7 @@ These residual differences are the ones Telegram's `ipadiff.py` does not normali
 = Limitations
 As for earlier versions:
 - The public source itself is not reviewed.
-- Prebuilt dependencies (libsignal, RingRTC, WebRTC, LibMobileCoin) are checked against their pinned versions, not rebuilt from their own source.
+- *Prebuilt libraries: only libmobilecoin rebuilt.* This version's libmobilecoin (`signal/6.0.2`) is the same artifact that was rebuilt from source and matched byte for byte for 8.35.1 and 8.36 (#link("https://github.com/commandersaki/signal-ios-build-verification/blob/main/report/report.pdf")[8.35.1 report], section "Prebuilt native libraries rebuilt from source"). Its other prebuilt libraries, libsignal (`v0.94.4`), RingRTC (`v2.69.1`) and WebRTC (`7778b`), were checked against their pins only, not rebuilt. For the later versions 8.35.1 and 8.36, every prebuilt library reproduced exactly from public source with the projects' own recipes. That doesn't prove the same for these earlier builds, but it is a positive indicator that they too were built from their public source.
 - The causes of the UUID and rasterisation differences are inferred, not proven. For the assets, re-running the logged `actool` step with the iOS 26.5 Simulator runtime matching Signal's SDK (23F73), as well as with 23F77, gave the same differences, so the runtime is ruled out; the GPU or the host macOS remain (`out/asset_runtime_test.txt`).
 
 = Reproducing
@@ -84,4 +84,5 @@ The decrypted IPA is attached to the #link("https://github.com/commandersaki/sig
   table.header([Date], [Change]),
   [7 November 2026], [First published version, at `versions/8.15/`.],
   [7 November 2026], [*Moved* to `versions/8.15.0.1655/`; paths updated. *Added* the Simulator-runtime test to the limitations. *Added* this changelog.],
+  [8 November 2026], [*Changed* the prebuilt-dependencies limitation: libmobilecoin is now verified (the same artifact was rebuilt from source for 8.35.1 and 8.36); libsignal, RingRTC and WebRTC for this version are not, though later versions reproducing exactly is a positive indicator.],
 )

@@ -1,0 +1,12 @@
+2026-10-27T23:54:46.9502140Z Version: 20260828.587
+2026-10-27T23:54:46.9507440Z Image: macos-15-arm64
+2026-10-27T23:54:46.9507760Z Version: 20260907.0337.1
+2026-10-27T23:55:03.0026190Z   1.98.1-aarch64-apple-darwin installed - rustc 1.98.1 (48a229cea 2026-09-01)
+2026-10-27T23:55:08.7841140Z ##[group]Run swift/build_ffi.sh --release
+2026-10-28T00:00:22.4707920Z     Finished `release` profile [optimized + debuginfo] target(s) in 4m 48s
+2026-10-28T00:00:25.7860850Z ##[group]Run swift/build_ffi.sh --release
+2026-10-28T00:04:43.6252800Z     Finished `release` profile [optimized + debuginfo] target(s) in 4m 16s
+2026-10-28T00:04:46.4378910Z ##[group]Run swift/build_ffi.sh --release
+2026-10-28T00:09:00.1589780Z     Finished `release` profile [optimized + debuginfo] target(s) in 4m 12s
+2026-10-28T00:09:03.0811780Z ##[group]Run swift/build_xcframework.py --zip
+2026-10-28T00:09:19.4183710Z 60baf6a3a8ee4cab82339a5e4ed4676e2119c6dc8002018f8063d6a96c195a77  libsignal-client-ios-build-v0.106.1.xcframework.zip

@@ -8,16 +8,18 @@ Checks whether App Store builds of **Signal iOS** match their public source code
 - build metadata in plists
 - images rasterised at build time from identical sources
 
+**Prebuilt libraries too:** for 8.35.1 and 8.36, every prebuilt native library the app bundles (libsignal, RingRTC, WebRTC, libmobilecoin) was also rebuilt from its own public source and matches the shipped binary (byte-identical, WebRTC apart from its build UUID). Those two versions are therefore **fully reproducible from public source**. The scripts are in `verify/deps/`.
+
 This shows the shipped apps are built from the public source. It does **not** show that the public source itself is free of backdoors. See the limitations in each report.
 
 ## Versions
 
 | Version | Result | Report | Files |
 |---|---|---|---|
-| 8.35.1 (1964) | `__text` byte-identical in all first-party binaries; bundled frameworks match their pins; two planted-backdoor controls detected | [`report/report.pdf`](report/report.pdf) | [`versions/8.35.1.1964/`](versions/8.35.1.1964/) |
-| 8.14 (1637) | `__text` byte-identical in all 23 binaries; explains why [BarbossHack's check](https://community.signalusers.org/t/add-reproducible-builds-to-the-ios-app/20516/17) flagged it | [`versions/8.14.0.1637/report.pdf`](versions/8.14.0.1637/report.pdf) | [`versions/8.14.0.1637/`](versions/8.14.0.1637/) |
-| 8.15 (1655) | `__text` byte-identical in all 23 binaries | [`versions/8.15.0.1655/report.pdf`](versions/8.15.0.1655/report.pdf) | [`versions/8.15.0.1655/`](versions/8.15.0.1655/) |
-| 8.36 (1981) | `__text` byte-identical in all 21 binaries | [`versions/8.36.0.1981/report.pdf`](versions/8.36.0.1981/report.pdf) | [`versions/8.36.0.1981/`](versions/8.36.0.1981/) |
+| 8.35.1 (1964) | `__text` byte-identical in all first-party binaries; all four prebuilt native libraries rebuilt from source and matched (fully reproducible from public source); two planted-backdoor controls detected | [`report/report.pdf`](report/report.pdf) | [`versions/8.35.1.1964/`](versions/8.35.1.1964/) |
+| 8.14 (1637) | `__text` byte-identical in all 23 binaries; explains why [BarbossHack's check](https://community.signalusers.org/t/add-reproducible-builds-to-the-ios-app/20516/17) flagged it; of the prebuilt libraries only libmobilecoin rebuilt | [`versions/8.14.0.1637/report.pdf`](versions/8.14.0.1637/report.pdf) | [`versions/8.14.0.1637/`](versions/8.14.0.1637/) |
+| 8.15 (1655) | `__text` byte-identical in all 23 binaries; of the prebuilt libraries only libmobilecoin rebuilt | [`versions/8.15.0.1655/report.pdf`](versions/8.15.0.1655/report.pdf) | [`versions/8.15.0.1655/`](versions/8.15.0.1655/) |
+| 8.36 (1981) | `__text` byte-identical in all 21 binaries; all four prebuilt native libraries rebuilt from source and matched (fully reproducible from public source) | [`versions/8.36.0.1981/report.pdf`](versions/8.36.0.1981/report.pdf) | [`versions/8.36.0.1981/`](versions/8.36.0.1981/) |
 
 Each `versions/<tag>/` folder holds that version's decrypted app (`signal_dec/`) and outputs (`out/`), and its report where there is one. The 8.35.1 report stays at `report/report.pdf`, its original path. Decrypted IPAs are attached to a [release](https://github.com/commandersaki/signal-ios-build-verification/releases) per version.
 
