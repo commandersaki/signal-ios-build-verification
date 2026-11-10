@@ -8,6 +8,14 @@ Never claim a result that a script did not produce. If a difference is not one o
 
 An agent cannot do these alone, because they need a password, a sign-in or a GUI. Run password prompts in a real terminal: a backgrounded command cannot receive them.
 
+**Locked keychain (Mac over SSH).** When you work over SSH, or after a remote/GUI session ends, the macOS login keychain is locked, so `ipatool` and `gh` cannot read their stored credentials — `ipatool auth info` reports `item could not be found in the keyring` and `gh` reports `token is invalid`, even though the login succeeded earlier. Unlock it first, in a real terminal (it prompts for the Mac login password):
+
+```sh
+security unlock-keychain ~/Library/Keychains/login.keychain-db
+```
+
+Re-lock it afterwards with `security lock-keychain ~/Library/Keychains/login.keychain-db` if you want.
+
 **Machine:** an Apple silicon Mac with about 150 GB free for an app build, and more if WebRTC changed.
 
 **Tools:** install with Homebrew: `xcodes`, `ipatool`, `typst`, `gh`, `go`, `rustup`, `protobuf`, `coreutils`.
@@ -114,6 +122,7 @@ Script notes:
 
 ## Pitfalls
 
+- On a Mac over SSH, the login keychain is locked and `ipatool`/`gh` fail with "not found in the keyring" / "token is invalid". Unlock it first: `security unlock-keychain ~/Library/Keychains/login.keychain-db` (see [Manual prerequisites](#manual-prerequisites)).
 - zsh treats `"$tag:Podfile"` as a path modifier. Write `"${tag}:Podfile"`.
 - Overriding `HOME` changes what `~` means, so use absolute paths.
 - `xcodes install` needs a real terminal for its password.
