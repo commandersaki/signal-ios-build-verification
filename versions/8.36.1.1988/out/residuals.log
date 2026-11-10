@@ -1,0 +1,98 @@
+== __TEXT,__text SHA-256 (Apple segedit + shasum)
+BonMot_1760A186445495_PackageProduct b09824369f964bd3faa37c49b04ee709d33f81c365042517368fe75ec28f83a7 IDENTICAL 184596
+CocoaLumberjack_-500FEF4A7B3EDA0C_PackageProduct acfe8e13c6a69bcec64c49ea3592bb49f8175d530ff0aec6f7615f9e41ccfb00 IDENTICAL 66308
+GRDB_5DC4DB053_PackageProduct b5b96fd94bbf7049d6cac91df866dd44b0c6a74e7c104e68c947622aebcaabdb IDENTICAL 1541800
+libPhoneNumber_32788E2F62C8D1A8_PackageProduct 29064f123b6379bd834319fc9acfeedc44c19d04cf4977aec285b60d977e729a IDENTICAL 72576
+LibSignalClient_-379C53AEA1C291D_PackageProduct 834704862b47e385294dcb9612564109c96ceb213ece621a5ea10740081e08e6 IDENTICAL 10649064
+libwebp_4647D9071D10D7EC_PackageProduct 622bbeffe3376b1ba97baf6955284d671177a3cfd7038fab6067382c1a5d3a44 IDENTICAL 278768
+Logging_35C93DA702091ECE_PackageProduct 7887500eee12c78ce8462350d24e552a97544e82f402ebf8860e51f3ed0d917f IDENTICAL 39480
+Lottie_19F76E9844E937_PackageProduct 2539678dca5d2ebf74f992ee218276262dfc5b7086ddf0a478e0f64e3fb2b159 IDENTICAL 1421828
+MobileCoinCore_50FF61D552B47778_PackageProduct fe40bd43b0c96a8e84bf377dfbb7d45cb2eff684fa8e93c247d52b0d21b1636b IDENTICAL 8803808
+PureLayout_7B4592321BA5AA24_PackageProduct 427f18d20e19ebc4e7f24a9be514c431e2eaf49f37932c735f2a66eaaae662a9 IDENTICAL 20556
+SDWebImage_-382901E92613C85E_PackageProduct d158facb97b4e421814a9c07fdcdbe3f64877ffc699b5e6977b9c06736cf73db IDENTICAL 206220
+SDWebImageWebPCoder_2F1A86FD5050ED06_PackageProduct 48acce041e0c8fe06cc5440fb859f7b48edd416ca03681a379194627a928f68e IDENTICAL 11360
+SignalRingRTC            a8435f18a26d0f4c344f0f1f29646cd9c0f306e3bf68885c19d35e74f2c14da0 IDENTICAL 3013028
+SignalServiceKit         c30172ad8ac0a125b913d28c472157a92a93e1d981cd4cac0cf75cc9f4f493c3 IDENTICAL 18079540
+SignalUI                 160074db625429fa58a2eba7f023f2c2a6d1f49ea21b9bb5ec63ea78ec723cc6 IDENTICAL 3111600
+SQLCipher_6ABC871F80100B54_PackageProduct 793ac745e7ea5ebe9a357949a36abeddb5450253f2834c5ffdf30c7d9a5e9a20 IDENTICAL 918256
+SwiftProtobuf_7CEE9AB92C12BC6B_PackageProduct f83bfd9e8fcfa7b6667cd18665d0bd935d63117efc6241f6fc7c3d1a412a0641 IDENTICAL 957464
+WebRTC                   38388eac05929b0a952949e4f670155aad4c3129fe934839b829389ceb337ee7 IDENTICAL 7439384
+SignalNSE                b3f7b3a27a411aeff0c8d8eac136349b168dcdb8bcf72c90f4517417f1d6ff58 IDENTICAL 40484
+SignalShareExtension     a3f81ab62c81eecf515b69882f526646c7a258ed957b1f5101577835e87338dc IDENTICAL 100052
+Signal                   670acc0af91805347b64820c5e218f301d311b07580317e8c7dfaf6d356cb87a IDENTICAL 11223060
+== whole-binary byte diff (signatures removed), by region
+BonMot_1760A186445495_PackageProduct differing_bytes=1      {'mach_header+load_commands': 1}
+CocoaLumberjack_-500FEF4A7B3EDA0C_PackageProduct differing_bytes=1      {'mach_header+load_commands': 1}
+GRDB_5DC4DB053_PackageProduct differing_bytes=2      {'mach_header+load_commands': 2}
+libPhoneNumber_32788E2F62C8D1A8_PackageProduct differing_bytes=1      {'mach_header+load_commands': 1}
+LibSignalClient_-379C53AEA1C291D_PackageProduct differing_bytes=1      {'mach_header+load_commands': 1}
+libwebp_4647D9071D10D7EC_PackageProduct differing_bytes=2      {'mach_header+load_commands': 2}
+Logging_35C93DA702091ECE_PackageProduct differing_bytes=1      {'mach_header+load_commands': 1}
+Lottie_19F76E9844E937_PackageProduct differing_bytes=1      {'mach_header+load_commands': 1}
+MobileCoinCore_50FF61D552B47778_PackageProduct differing_bytes=2      {'mach_header+load_commands': 2}
+PureLayout_7B4592321BA5AA24_PackageProduct differing_bytes=1      {'mach_header+load_commands': 1}
+SDWebImage_-382901E92613C85E_PackageProduct differing_bytes=1      {'mach_header+load_commands': 1}
+SDWebImageWebPCoder_2F1A86FD5050ED06_PackageProduct differing_bytes=1      {'mach_header+load_commands': 1}
+SignalRingRTC            differing_bytes=2      {'mach_header+load_commands': 2}
+SignalServiceKit         differing_bytes=2      {'mach_header+load_commands': 2}
+SignalUI                 differing_bytes=1181   {'mach_header+load_commands': 18, '__TEXT,__stubs': 1, '__TEXT,__objc_stubs': 1162}
+SQLCipher_6ABC871F80100B54_PackageProduct differing_bytes=2      {'mach_header+load_commands': 2}
+SwiftProtobuf_7CEE9AB92C12BC6B_PackageProduct differing_bytes=1      {'mach_header+load_commands': 1}
+WebRTC                   differing_bytes=2      {'mach_header+load_commands': 2}
+SignalNSE                differing_bytes=2      {'mach_header+load_commands': 2}
+SignalShareExtension     differing_bytes=1      {'mach_header+load_commands': 1}
+Signal                   differing_bytes=1      {'mach_header+load_commands': 1}
+== header bytes: which load-command field
+BonMot_1760A186445495_PackageProduct {'__LINKEDIT.vmsize': 1}
+CocoaLumberjack_-500FEF4A7B3EDA0C_PackageProduct {'__LINKEDIT.vmsize': 1}
+GRDB_5DC4DB053_PackageProduct {'__LINKEDIT.vmsize': 2}
+libPhoneNumber_32788E2F62C8D1A8_PackageProduct {'__LINKEDIT.vmsize': 1}
+LibSignalClient_-379C53AEA1C291D_PackageProduct {'__LINKEDIT.vmsize': 1}
+libwebp_4647D9071D10D7EC_PackageProduct {'__LINKEDIT.vmsize': 2}
+Logging_35C93DA702091ECE_PackageProduct {'__LINKEDIT.vmsize': 1}
+Lottie_19F76E9844E937_PackageProduct {'__LINKEDIT.vmsize': 1}
+MobileCoinCore_50FF61D552B47778_PackageProduct {'__LINKEDIT.vmsize': 2}
+PureLayout_7B4592321BA5AA24_PackageProduct {'__LINKEDIT.vmsize': 1}
+SDWebImage_-382901E92613C85E_PackageProduct {'__LINKEDIT.vmsize': 1}
+SDWebImageWebPCoder_2F1A86FD5050ED06_PackageProduct {'__LINKEDIT.vmsize': 1}
+Signal                   {'__LINKEDIT.vmsize': 1}
+SignalNSE                {'__LINKEDIT.vmsize': 2}
+SignalRingRTC            {'__LINKEDIT.vmsize': 2}
+SignalServiceKit         {'__LINKEDIT.vmsize': 2}
+SignalShareExtension     {'__LINKEDIT.vmsize': 1}
+SignalUI                 {'__LINKEDIT.vmsize': 2, 'LC_UUID': 16}
+SQLCipher_6ABC871F80100B54_PackageProduct {'__LINKEDIT.vmsize': 2}
+SwiftProtobuf_7CEE9AB92C12BC6B_PackageProduct {'__LINKEDIT.vmsize': 1}
+WebRTC                   {'__LINKEDIT.vmsize': 2}
+== stubs and __const: do differing bytes still resolve to the same targets?
+-- SignalUI
+__stubs: 1750 stubs, 1750 resolve identically; 1 differ in bytes, of which 1 still resolve to the same target
+__objc_stubs: 1162 stubs, 1162 resolve identically; 1162 differ in bytes, of which 1162 still resolve to the same target
+header: 18 differing bytes; 16 in LC_UUID; others at ['0xe89', '0xe8a']
+__const words differing: 0, resolving to the same symbol through the GOT: 0
+== plists: differing keys
+plists differing: 38
+  76 BuildMachineOSBuild
+   6 CFBundleVersion
+   2 Timestamp
+   2 DateTime
+   1 DTAppStoreToolsBuild
+== loose PNGs that differ: decoded pixels
+-- AppIcon60x60@2x.png
+120x120 bpp=4: pixels identical=False differing_pixels=107/14400 max_channel_delta=1
+-- AppIcon76x76@2x~ipad.png
+152x152 bpp=4: pixels identical=False differing_pixels=176/23104 max_channel_delta=1
+== asset catalogs: renditions
+PlugIns/SignalShareExtension.appex/Assets.car: renditions ref=2542 cand=2542; same identity=2542; identical=2541; digest differs=1; ref-only=0; cand-only=0
+   raster of identical vector source: 1 ['reactions-megaphone-bg']
+   ref-only renditions without a same-name/type/idiom/scale/size counterpart: 0
+   cand-only renditions without a counterpart: 0 []
+PlugIns/SignalNSE.appex/Assets.car: renditions ref=8 cand=8; same identity=8; identical=8; digest differs=0; ref-only=0; cand-only=0
+   ref-only renditions without a same-name/type/idiom/scale/size counterpart: 0
+   cand-only renditions without a counterpart: 0 []
+Assets.car: renditions ref=2904 cand=2904; same identity=2832; identical=2832; digest differs=0; ref-only=72; cand-only=72
+   ref-only renditions without a same-name/type/idiom/scale/size counterpart: 0
+   cand-only renditions without a counterpart: 0 []
+== reference app vs its own code signatures
+21 signed Mach-O binaries, 26778 code-signature pages: 6381 match as-is; 20376 differ inside FairPlay-encrypted ranges (expected: those pages are now decrypted); 21 differ outside them; after restoring cryptid=1, 0 still differ outside them
+done: versions/8.36.1.1988/out/residuals

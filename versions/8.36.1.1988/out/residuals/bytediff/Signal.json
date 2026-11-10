@@ -1,0 +1,14 @@
+{
+ "a": "$TMPDIR/...",
+ "b": "/Volumes/workspace/build.xcarchive/Products/Applications/Signal.app/Signal",
+ "a_size_unsigned": 17034528,
+ "b_size_unsigned": 17034528,
+ "identical": false,
+ "differing_bytes": 1,
+ "by_region": {
+  "mach_header+load_commands": 1
+ },
+ "first_offset": {
+  "mach_header+load_commands": "0xf22"
+ }
+}

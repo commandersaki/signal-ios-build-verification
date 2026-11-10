@@ -1,0 +1,14 @@
+{
+ "a": "$TMPDIR/...",
+ "b": "/Volumes/workspace/build.xcarchive/Products/Applications/Signal.app/Frameworks/SQLCipher_6ABC871F80100B54_PackageProduct.framework/SQLCipher_6ABC871F80100B54_PackageProduct",
+ "a_size_unsigned": 1193416,
+ "b_size_unsigned": 1193416,
+ "identical": false,
+ "differing_bytes": 2,
+ "by_region": {
+  "mach_header+load_commands": 2
+ },
+ "first_offset": {
+  "mach_header+load_commands": "0x4d9"
+ }
+}

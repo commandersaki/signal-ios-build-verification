@@ -1,0 +1,5 @@
+-- SignalUI
+__stubs: 1750 stubs, 1750 resolve identically; 1 differ in bytes, of which 1 still resolve to the same target
+__objc_stubs: 1162 stubs, 1162 resolve identically; 1162 differ in bytes, of which 1162 still resolve to the same target
+header: 18 differing bytes; 16 in LC_UUID; others at ['0xe89', '0xe8a']
+__const words differing: 0, resolving to the same symbol through the GOT: 0

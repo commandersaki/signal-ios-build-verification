@@ -1,0 +1,21 @@
+BonMot_1760A186445495_PackageProduct {'__LINKEDIT.vmsize': 1}
+CocoaLumberjack_-500FEF4A7B3EDA0C_PackageProduct {'__LINKEDIT.vmsize': 1}
+GRDB_5DC4DB053_PackageProduct {'__LINKEDIT.vmsize': 2}
+libPhoneNumber_32788E2F62C8D1A8_PackageProduct {'__LINKEDIT.vmsize': 1}
+LibSignalClient_-379C53AEA1C291D_PackageProduct {'__LINKEDIT.vmsize': 1}
+libwebp_4647D9071D10D7EC_PackageProduct {'__LINKEDIT.vmsize': 2}
+Logging_35C93DA702091ECE_PackageProduct {'__LINKEDIT.vmsize': 1}
+Lottie_19F76E9844E937_PackageProduct {'__LINKEDIT.vmsize': 1}
+MobileCoinCore_50FF61D552B47778_PackageProduct {'__LINKEDIT.vmsize': 2}
+PureLayout_7B4592321BA5AA24_PackageProduct {'__LINKEDIT.vmsize': 1}
+SDWebImage_-382901E92613C85E_PackageProduct {'__LINKEDIT.vmsize': 1}
+SDWebImageWebPCoder_2F1A86FD5050ED06_PackageProduct {'__LINKEDIT.vmsize': 1}
+Signal                   {'__LINKEDIT.vmsize': 1}
+SignalNSE                {'__LINKEDIT.vmsize': 2}
+SignalRingRTC            {'__LINKEDIT.vmsize': 2}
+SignalServiceKit         {'__LINKEDIT.vmsize': 2}
+SignalShareExtension     {'__LINKEDIT.vmsize': 1}
+SignalUI                 {'__LINKEDIT.vmsize': 2, 'LC_UUID': 16}
+SQLCipher_6ABC871F80100B54_PackageProduct {'__LINKEDIT.vmsize': 2}
+SwiftProtobuf_7CEE9AB92C12BC6B_PackageProduct {'__LINKEDIT.vmsize': 1}
+WebRTC                   {'__LINKEDIT.vmsize': 2}

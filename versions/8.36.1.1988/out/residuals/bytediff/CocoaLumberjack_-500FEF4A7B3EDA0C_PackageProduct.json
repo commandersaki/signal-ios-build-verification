@@ -1,0 +1,14 @@
+{
+ "a": "$TMPDIR/...",
+ "b": "/Volumes/workspace/build.xcarchive/Products/Applications/Signal.app/Frameworks/CocoaLumberjack_-500FEF4A7B3EDA0C_PackageProduct.framework/CocoaLumberjack_-500FEF4A7B3EDA0C_PackageProduct",
+ "a_size_unsigned": 279288,
+ "b_size_unsigned": 279288,
+ "identical": false,
+ "differing_bytes": 1,
+ "by_region": {
+  "mach_header+load_commands": 1
+ },
+ "first_offset": {
+  "mach_header+load_commands": "0xa29"
+ }
+}
