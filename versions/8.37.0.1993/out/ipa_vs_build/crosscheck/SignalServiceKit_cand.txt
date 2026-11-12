@@ -1,0 +1,7 @@
+OK       __TEXT,__cstring             ours=  12990 segedit=  12990 only_ours=0 only_segedit=0
+OK       __TEXT,__objc_classname      ours=   1108 segedit=   1108 only_ours=0 only_segedit=0
+OK       __TEXT,__objc_methname       ours=   4291 segedit=   4291 only_ours=0 only_segedit=0
+OK       __TEXT,__objc_methtype       ours=    294 segedit=    294 only_ours=0 only_segedit=0
+OK       __TEXT,__swift5_reflstr      ours=  10432 segedit=  10432 only_ours=0 only_segedit=0
+OK       __TEXT,__oslogstring         ours=      0 segedit=absent (error: /Applications/Xcode-27.1.0.app/Contents/Developer/Too)
+RESULT: PASS

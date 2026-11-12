@@ -1,0 +1,18 @@
+{
+ "a": "/var/folders/fv/xpmpsvgd6bvcmss7yc8sjth40000gn/T/tmp.CLMBjvuQE0/ref/signal-ios-8.37.0-1993.decrypted/Payload/Signal.app/Signal",
+ "b": "/Volumes/workspace/build.xcarchive/Products/Applications/Signal.app/Signal",
+ "a_size_unsigned": 17030256,
+ "b_size_unsigned": 17030256,
+ "identical": false,
+ "differing_bytes": 1711,
+ "by_region": {
+  "mach_header+load_commands": 17,
+  "__TEXT,__stubs": 1,
+  "__TEXT,__objc_stubs": 1693
+ },
+ "first_offset": {
+  "mach_header+load_commands": "0xf22",
+  "__TEXT,__stubs": "0xac40c1",
+  "__TEXT,__objc_stubs": "0xac486d"
+ }
+}

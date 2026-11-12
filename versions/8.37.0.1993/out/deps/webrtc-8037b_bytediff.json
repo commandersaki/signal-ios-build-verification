@@ -1,0 +1,16 @@
+{
+ "a": "webrtc-8037b-ios-release.xcframework.zip/ios-arm64/WebRTC.framework/WebRTC",
+ "b": "/Users/runner/work/ringrtc/ringrtc/out/release/WebRTC.xcframework/ios-arm64/WebRTC.framework/WebRTC",
+ "a_size_unsigned": 8654832,
+ "b_size_unsigned": 8654720,
+ "identical": false,
+ "differing_bytes": 22046,
+ "by_region": {
+  "mach_header+load_commands": 16,
+  "__LINKEDIT": 22030
+ },
+ "first_offset": {
+  "mach_header+load_commands": "0xb78",
+  "__LINKEDIT": "0x838838"
+ }
+}

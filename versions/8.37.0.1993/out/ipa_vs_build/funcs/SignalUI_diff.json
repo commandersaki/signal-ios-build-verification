@@ -1,0 +1,14 @@
+{
+ "a": "versions/8.37.0.1993/out/ipa_vs_build/funcs/SignalUI_ref.json",
+ "b": "versions/8.37.0.1993/out/ipa_vs_build/funcs/SignalUI_cand.json",
+ "a_functions": 17529,
+ "b_functions": 17529,
+ "matched_functions": 17529,
+ "a_insns": 746905,
+ "b_insns": 746905,
+ "matched_insns": 746905,
+ "func_match_pct_of_a": 100.0,
+ "insn_match_pct_of_a": 100.0,
+ "unmatched_in_a": [],
+ "unmatched_in_b": []
+}

@@ -1,0 +1,14 @@
+{
+ "a": "/var/folders/fv/xpmpsvgd6bvcmss7yc8sjth40000gn/T/tmp.CLMBjvuQE0/ref/signal-ios-8.37.0-1993.decrypted/Payload/Signal.app/Frameworks/SignalRingRTC_5A63726BF07452E4_PackageProduct.framework/SignalRingRTC_5A63726BF07452E4_PackageProduct",
+ "b": "/Volumes/workspace/build.xcarchive/Products/Applications/Signal.app/Frameworks/SignalRingRTC_5A63726BF07452E4_PackageProduct.framework/SignalRingRTC_5A63726BF07452E4_PackageProduct",
+ "a_size_unsigned": 6137872,
+ "b_size_unsigned": 6137872,
+ "identical": false,
+ "differing_bytes": 2,
+ "by_region": {
+  "mach_header+load_commands": 2
+ },
+ "first_offset": {
+  "mach_header+load_commands": "0xde9"
+ }
+}

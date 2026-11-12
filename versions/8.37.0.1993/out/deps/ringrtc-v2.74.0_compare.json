@@ -1,0 +1,15 @@
+{
+ "ref": "ringrtc-ios-build-v2.74.0.xcframework.zip/LibRingRTCFfi.xcframework/ios-arm64/libringrtc.a",
+ "cand": "/Users/runner/work/ringrtc/ringrtc/out/build/aarch64-apple-ios/release/libringrtc.a",
+ "ref_members": 579,
+ "cand_members": 579,
+ "only_ref": [],
+ "only_cand": [],
+ "identical": 579,
+ "differ": {},
+ "by_kind": {
+  "macho identical": 579
+ },
+ "symdef_identical": true,
+ "whole_file_identical": true
+}

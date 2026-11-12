@@ -1,0 +1,14 @@
+{
+ "a": "/var/folders/fv/xpmpsvgd6bvcmss7yc8sjth40000gn/T/tmp.CLMBjvuQE0/ref/signal-ios-8.37.0-1993.decrypted/Payload/Signal.app/Frameworks/SwiftProtobuf_7CEE9AB92C12BC6B_PackageProduct.framework/SwiftProtobuf_7CEE9AB92C12BC6B_PackageProduct",
+ "b": "/Volumes/workspace/build.xcarchive/Products/Applications/Signal.app/Frameworks/SwiftProtobuf_7CEE9AB92C12BC6B_PackageProduct.framework/SwiftProtobuf_7CEE9AB92C12BC6B_PackageProduct",
+ "a_size_unsigned": 1479952,
+ "b_size_unsigned": 1479952,
+ "identical": false,
+ "differing_bytes": 1,
+ "by_region": {
+  "mach_header+load_commands": 1
+ },
+ "first_offset": {
+  "mach_header+load_commands": "0xc59"
+ }
+}
