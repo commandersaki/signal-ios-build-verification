@@ -5,6 +5,8 @@
 *.decrypted.json
 iTunesMetadata.plist
 META-INF/
+signal_dec/
+versions/*/signal_dec/
 
 # Large regenerated outputs
 versions/*/out/**/*_dump/

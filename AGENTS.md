@@ -46,7 +46,13 @@ DEVELOPER_DIR=<Xcode>/Contents/Developer xcodebuild -downloadComponent MetalTool
 sudo mkdir -p /Users/runner /Users/signal /usr/local/lib
 sudo chown "$USER" /Users/runner /Users/signal
 ```
-Each library needs its Xcode at an exact path, listed under [Prebuilt libraries](#prebuilt-libraries).
+Each library needs its Xcode at an exact path, listed under [Prebuilt libraries](#prebuilt-libraries). The Rust libraries also need rustup installed under the runner home, because the scripts set `HOME=/Users/runner` and the recorded rustc path starts `/Users/runner/.rustup`:
+```sh
+mkdir -p /Users/runner/.cargo/bin
+cp "$(rustup which rustup)" /Users/runner/.cargo/bin/rustup
+ln -sf rustup /Users/runner/.cargo/bin/cargo
+ln -sf rustup /Users/runner/.cargo/bin/rustc
+```
 
 **Publishing:** `gh auth login`, plus push access to this repository.
 
@@ -61,7 +67,12 @@ Each library needs its Xcode at an exact path, listed under [Prebuilt libraries]
    ```
    Every encrypted-IPA signature page must verify, and no bytes may change outside the encrypted ranges.
 4. **Check the inputs.** The IPA's `Info.plist` must give the tag's commit (`BuildDetails.SignalCommit`), and `DTXcodeBuild` names the Xcode to use.
-5. **Make the publishable IPA.** Copy the decrypted IPA and run `zip -d <copy> iTunesMetadata.plist 'META-INF/*' 'META-INF/'`. Unzip its `Payload` to `versions/<tag>/signal_dec/`.
+5. **Make the publishable IPA.** Copy the decrypted IPA to `signal-ios-<version>-<build>.decrypted.ipa` and strip the account-bound members:
+   ```sh
+   cp <decrypted.ipa> signal-ios-<version>-<build>.decrypted.ipa
+   zip -d signal-ios-<version>-<build>.decrypted.ipa iTunesMetadata.plist 'META-INF/*' 'META-INF/'
+   ```
+   This stripped copy is the reference input for every later step and the asset attached to the GitHub release. The scripts take the `.ipa` directly — do not unzip it to a `signal_dec/` directory and do not commit the app.
 6. **Build at the Xcode Cloud path.** The path matters.
    ```sh
    hdiutil create -size 150g -type SPARSE -fs APFS -volname workspace workspace.sparseimage
@@ -69,20 +80,27 @@ Each library needs its Xcode at an exact path, listed under [Prebuilt libraries]
    git clone https://github.com/signalapp/Signal-iOS.git /Volumes/workspace/repository
    cd /Volumes/workspace/repository && git checkout <tag>
    export DEVELOPER_DIR=<Xcode>/Contents/Developer
-   Scripts/check_xcode_version.py && make dependencies
+   Scripts/check_xcode_version.py
    xcodebuild archive -workspace Signal.xcworkspace -scheme Signal \
      -destination 'generic/platform=iOS' -derivedDataPath /Volumes/workspace/DerivedData \
      -archivePath /Volumes/workspace/build.xcarchive \
      CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY=""
    ```
-   Do not pass `-configuration Release`: the scheme's "App Store Release" configuration is the right one. Use a fresh clone and DerivedData for each version.
-7. **Compare.** Run these from this repository, with `DEVELOPER_DIR` still set:
+   Do not pass `-configuration Release`: the scheme's "App Store Release" configuration is the right one. Use a fresh clone and DerivedData for each version. From 8.37 the CocoaPods `Makefile` is gone: the frameworks and prebuilt binaries are Swift Package Manager packages pinned with exact versions and resolved by `xcodebuild` itself. For 8.36 and earlier, run `make dependencies` between the version check and `xcodebuild`.
+7. **Compare.** Run these from this repository, with `DEVELOPER_DIR` still set and `<ipa>` the stripped IPA from step 5:
    ```sh
    verify/provenance.sh <ipa> /Volumes/workspace/repository versions/<tag>/out/provenance_ipa.txt
    verify/compare_build.sh <ipa> <built Signal.app> versions/<tag>/out/ipa_vs_build
    python3 -I verify/summarise.py versions/<tag>/out/ipa_vs_build
    verify/explain_residuals.sh <ipa> <built Signal.app> versions/<tag>/out/residuals
    ```
+
+   To re-run the comparison later, or let someone else check it, fetch the released IPA instead of decrypting again:
+   ```sh
+   wget -O signal-ios-<version>-<build>.decrypted.ipa \
+     https://github.com/commandersaki/signal-ios-build-verification/releases/download/signal-<version>/signal-ios-<version>-<build>.decrypted.ipa
+   ```
+   then run the same four commands against that file.
 8. **Check the prebuilt libraries** (next section).
 9. **Write a short report** at `versions/<tag>/report.typ`, based on the 8.36 report, and build it with `typst compile`. Cover the method briefly, the inputs, a results table and the limitations. Check every number against the script outputs.
 10. **Publish only after a person has reviewed the report.** See [Publishing](#publishing).
@@ -98,6 +116,7 @@ Each library needs its Xcode at an exact path, listed under [Prebuilt libraries]
 | Loose app icons, 72 "Icon Image" renditions | Rasterised at build time, at most a few levels per channel |
 | Rasterised renditions and packed atlases (seen with Xcode 26.5) | The vector source must be identical in both catalogs |
 | WebRTC in a fat wrapper | App Store thinning; the scripts extract the arm64 slice |
+| WebRTC rebuild's `radr://5614542` symbol | The prebuilt (built on Signal's macOS 15 CI) carries a linker-synthesised `radr://5614542` marker symbol plus ~96 bytes of string-table data that `ld64` does not emit on newer macOS hosts. `__TEXT,__text` stays byte-identical |
 
 `__TEXT,__text` must be byte-identical in every binary. Anything else is a finding.
 
@@ -129,10 +148,10 @@ Script notes:
 
 ## Publishing
 
-- **Layout:** `versions/<Signal tag>/` holds `report.typ`, `report.pdf`, `README.md`, `signal_dec/` and `out/`. `report/report.pdf` is linked from public posts, so never move it.
-- **Decrypted IPA:** attach the stripped copy to a GitHub release named `signal-<version>`. It is too big for git.
+- **Layout:** `versions/<Signal tag>/` holds `report.typ`, `report.pdf`, `README.md` and `out/`. `report/report.pdf` is linked from public posts, so never move it.
+- **Decrypted IPA:** attach the stripped copy to a GitHub release named `signal-<version>`, as an asset `signal-ios-<version>-<build>.decrypted.ipa`. It is too big for git, and the unzipped app (`signal_dec/`) must never be committed.
 - **Outputs:** publish summaries and `*_diff.json` files, not `*_ref.json`, `*_cand.json` or function dumps.
-- **Privacy:** never publish the unfairplay model, encrypted IPAs or their hashes, `iTunesMetadata.plist`, `META-INF/`, or local usernames and paths. Search the outputs for them before committing.
+- **Privacy:** never publish the unfairplay model, encrypted IPAs or their hashes, `iTunesMetadata.plist`, `META-INF/`, the unzipped `signal_dec/` app, or local usernames and paths. Search the outputs for them before committing.
 - **Commits:** use the repository's local git identity and UTC timestamps.
 - **Published reports:** record later edits in a Changelog section.
 - **Markdown:** make every referenced path, file or CI run a link, and check that the links resolve.

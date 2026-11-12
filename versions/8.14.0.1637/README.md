@@ -8,7 +8,7 @@ A follow-up to [BarbossHack's reproducibility check](https://community.signaluse
 - Two app icons are rasterised at build time and differ by at most 8/255 per channel.
 
 - Report: [`report.pdf`](report.pdf) (source: `report.typ`)
-- `signal_dec/Payload/Signal.app`: BarbossHack's decrypted App Store app, from [`BarbossHack/reproducible-LFS`](https://github.com/BarbossHack/reproducible-LFS/tree/master/Signal-iOS) (`org.whispersystems.signal_8.14.decrypted.ipa`, SHA-256 `8a836442d58befa1d1806f5043fc6a3b3051cafc9e46e6f45ca328d501d77e1d`). A separate download decrypted with unfairplay is byte-identical to it, file for file.
+- Decrypted IPA: BarbossHack's copy, [`org.whispersystems.signal_8.14.decrypted.ipa`](https://github.com/commandersaki/signal-ios-build-verification/releases/download/signal-8.14/org.whispersystems.signal_8.14.decrypted.ipa) (SHA-256 `8a836442d58befa1d1806f5043fc6a3b3051cafc9e46e6f45ca328d501d77e1d`), from [`BarbossHack/reproducible-LFS`](https://github.com/BarbossHack/reproducible-LFS/tree/master/Signal-iOS). A separate download decrypted with unfairplay is byte-identical to it, file for file.
 - `out/`: outputs:
   - `ipa_vs_build/`: strings, symbols and functions of the five first-party binaries.
   - `residuals/`: every other differing byte and file.
