@@ -8,7 +8,7 @@ Checks whether App Store builds of **Signal iOS** match their public source code
 - build metadata in plists
 - images rasterised at build time from identical sources
 
-**Prebuilt libraries too:** for 8.35.1, 8.36 and 8.36.1, every prebuilt native library the app bundles (libsignal, RingRTC, WebRTC, libmobilecoin) was also rebuilt from its own public source and matches the shipped binary (byte-identical, WebRTC apart from its build UUID). Those versions are therefore **fully reproducible from public source**. The scripts are in `verify/deps/`.
+**Prebuilt libraries too:** for 8.35.1, 8.36, 8.36.1, 8.37 and 8.38, every prebuilt native library the app bundles (libsignal, RingRTC, WebRTC, libmobilecoin) was also rebuilt from its own public source and matches the shipped binary (byte-identical, WebRTC apart from its build UUID). Those versions are therefore **fully reproducible from public source**. The scripts are in `verify/deps/`.
 
 This shows the shipped apps are built from the public source. It does **not** show that the public source itself is free of backdoors. See the limitations in each report.
 
@@ -22,6 +22,7 @@ This shows the shipped apps are built from the public source. It does **not** sh
 | 8.36 (1981) | `__text` byte-identical in all 21 binaries; all four prebuilt native libraries rebuilt from source and matched (fully reproducible from public source) | [`versions/8.36.0.1981/report.pdf`](versions/8.36.0.1981/report.pdf) | [`versions/8.36.0.1981/`](versions/8.36.0.1981/) |
 | 8.36.1 (1988) | `__text` byte-identical in all 21 binaries; all four prebuilt libraries unchanged from 8.36, whose rebuilds carry over (fully reproducible from public source) | [`versions/8.36.1.1988/report.pdf`](versions/8.36.1.1988/report.pdf) | [`versions/8.36.1.1988/`](versions/8.36.1.1988/) |
 | 8.37 (1993) | `__text` byte-identical in all 21 binaries; libsignal and libmobilecoin carry over from 8.36, RingRTC and WebRTC rebuilt from source and matched (fully reproducible from public source) | [`versions/8.37.0.1993/report.pdf`](versions/8.37.0.1993/report.pdf) | [`versions/8.37.0.1993/`](versions/8.37.0.1993/) |
+| 8.38 (2011) | `__text` byte-identical in all 21 binaries, and every binary identical apart from its signature size; libsignal, RingRTC and WebRTC rebuilt from source and matched, libmobilecoin carries over from 8.36 (fully reproducible from public source) | [`versions/8.38.0.2011/report.pdf`](versions/8.38.0.2011/report.pdf) | [`versions/8.38.0.2011/`](versions/8.38.0.2011/) |
 
 Each `versions/<tag>/` folder holds that version's outputs (`out/`) and, where there is one, its report. The 8.35.1 report stays at `report/report.pdf`, its original path. The decrypted app itself is distributed as an IPA attached to a [release](https://github.com/commandersaki/signal-ios-build-verification/releases) per version.
 
@@ -30,7 +31,7 @@ Each `versions/<tag>/` folder holds that version's outputs (`out/`) and, where t
 
 ## Reproducing
 
-You need a Mac with the Xcode build recorded in the app's `Info.plist` (`DTXcodeBuild`). For 8.35.1, 8.36 and 8.36.1 that's Xcode 27.1 (27A9275), and for 8.14 and 8.15 it's 26.5 (17F42). Fetch the decrypted IPA from the version's [release](https://github.com/commandersaki/signal-ios-build-verification/releases), build the tag at `/Volumes/workspace/repository` (see the report, §10 for 8.35.1), and compare. To check the decrypted app independently, decrypt your own copy — for example with [unfairplay](https://github.com/DrWhax/unfairplay) — and compare its per-binary hashes with `versions/<tag>/out/provenance_ipa.txt`. In short, for 8.36:
+You need a Mac with the Xcode build recorded in the app's `Info.plist` (`DTXcodeBuild`). For 8.35.1 and 8.36 to 8.38 that's Xcode 27.1 (27A9275), and for 8.14 and 8.15 it's 26.5 (17F42). Fetch the decrypted IPA from the version's [release](https://github.com/commandersaki/signal-ios-build-verification/releases), build the tag at `/Volumes/workspace/repository` (see the report, §10 for 8.35.1), and compare. To check the decrypted app independently, decrypt your own copy — for example with [unfairplay](https://github.com/DrWhax/unfairplay) — and compare its per-binary hashes with `versions/<tag>/out/provenance_ipa.txt`. In short, for 8.36:
 
 ```sh
 wget -O signal-ios-8.36-1981.decrypted.ipa \

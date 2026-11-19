@@ -1,0 +1,14 @@
+{
+ "a": "/var/folders/vn/kjhbfcd57fs_v6788lrtqxz40000gn/T/tmp.nABDIiOZ4A/ref/signal-ios-8.38.0-2011.decrypted/Payload/Signal.app/Frameworks/WebRTC.framework/WebRTC",
+ "b": "/var/folders/vn/kjhbfcd57fs_v6788lrtqxz40000gn/T/tmp.nABDIiOZ4A/WebRTC.thin",
+ "a_size_unsigned": 8638304,
+ "b_size_unsigned": 8638304,
+ "identical": false,
+ "differing_bytes": 2,
+ "by_region": {
+  "mach_header+load_commands": 2
+ },
+ "first_offset": {
+  "mach_header+load_commands": "0xb69"
+ }
+}
